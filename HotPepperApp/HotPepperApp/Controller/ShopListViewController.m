@@ -10,12 +10,14 @@
 //#import "ShopEntity.h"
 //#import "HotPepperApiManager.h"
 #import "ShopTableViewDataSource.h"
+#import "ShopTableViewDelegate.h"
 #import "ShopCell.h"
 
 
 @interface ShopListViewController ()
 
 @property (nonatomic,strong) ShopTableViewDataSource *dataSource;
+@property (nonatomic,strong) ShopTableViewDelegate *tableViewDelegate;
 @property (nonatomic,strong) HotPepperApiManager *manager;
 
 @end
@@ -37,8 +39,10 @@
     
     self.dataSource = [[ShopTableViewDataSource alloc]init];
     self.tableView.dataSource = self.dataSource;
+    self.tableView.delegate = self;
    
 }
+
 
 
 -(void)finishGettingInfo:(NSMutableArray *)shopList{
@@ -49,6 +53,18 @@
 
 
 }
+
+#pragma mark - UITableViewDelegate
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 200;
+}
+
+
+
+
+
 
 
 @end

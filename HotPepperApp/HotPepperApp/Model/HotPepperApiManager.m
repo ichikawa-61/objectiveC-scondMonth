@@ -66,6 +66,7 @@ AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
              
              NSLog(@"%@",shopEntity.name);
              NSLog(@"%@",shopEntity.averageBudget);
+             NSLog(@"%@",shopEntity.address);
              
              [shopEntityList addObject:shopEntity];
          }
