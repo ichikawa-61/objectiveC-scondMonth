@@ -27,6 +27,7 @@
     [super viewDidLoad];
     
     NSString *area = @"五反田";
+    self.navigationItem.title = @"五反田の飲食店";
     self.manager = [[HotPepperApiManager alloc]init];
     self.manager.delegate = self;
     [self.manager getShopInformation:area];
