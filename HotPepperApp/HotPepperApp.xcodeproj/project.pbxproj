@@ -18,6 +18,9 @@
 		385EB4481EAD85E70044F30E /* ShopList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 385EB4471EAD85E70044F30E /* ShopList.storyboard */; };
 		385EB44C1EAD87360044F30E /* ShopEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 385EB44B1EAD87360044F30E /* ShopEntity.m */; };
 		385EB44F1EAD87740044F30E /* HotPepperApiManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 385EB44E1EAD87740044F30E /* HotPepperApiManager.m */; };
+		385EB45F1EAD96D80044F30E /* ShopTableViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 385EB45E1EAD96D80044F30E /* ShopTableViewDataSource.m */; };
+		385EB4681EAD990B0044F30E /* ShopCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 385EB4661EAD990B0044F30E /* ShopCell.m */; };
+		385EB4691EAD990B0044F30E /* ShopCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 385EB4671EAD990B0044F30E /* ShopCell.xib */; };
 		8BD570AB590EEEE590713DAC /* libPods-HotPepperAppUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 34B21B39CED9D39C4067C996 /* libPods-HotPepperAppUITests.a */; };
 		A0241DE3CACDA90C7FFF3A82 /* libPods-HotPepperApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8980BB0B49FF2E94462D1F57 /* libPods-HotPepperApp.a */; };
 /* End PBXBuildFile section */
@@ -62,6 +65,11 @@
 		385EB44B1EAD87360044F30E /* ShopEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ShopEntity.m; path = Model/ShopEntity.m; sourceTree = "<group>"; };
 		385EB44D1EAD87740044F30E /* HotPepperApiManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HotPepperApiManager.h; path = Model/HotPepperApiManager.h; sourceTree = "<group>"; };
 		385EB44E1EAD87740044F30E /* HotPepperApiManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HotPepperApiManager.m; path = Model/HotPepperApiManager.m; sourceTree = "<group>"; };
+		385EB45D1EAD96D80044F30E /* ShopTableViewDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ShopTableViewDataSource.h; path = View/ShopTableViewDataSource.h; sourceTree = "<group>"; };
+		385EB45E1EAD96D80044F30E /* ShopTableViewDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ShopTableViewDataSource.m; path = View/ShopTableViewDataSource.m; sourceTree = "<group>"; };
+		385EB4651EAD990B0044F30E /* ShopCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ShopCell.h; path = View/ShopCell.h; sourceTree = "<group>"; };
+		385EB4661EAD990B0044F30E /* ShopCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ShopCell.m; path = View/ShopCell.m; sourceTree = "<group>"; };
+		385EB4671EAD990B0044F30E /* ShopCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ShopCell.xib; path = View/ShopCell.xib; sourceTree = "<group>"; };
 		75E7202B5BF48C5AE9F3C58B /* Pods-HotPepperApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HotPepperApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HotPepperApp/Pods-HotPepperApp.debug.xcconfig"; sourceTree = "<group>"; };
 		797219279D69AE50C954D16E /* libPods-HotPepperAppTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-HotPepperAppTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		809D0C4FE61B612629A18088 /* Pods-HotPepperAppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HotPepperAppUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-HotPepperAppUITests/Pods-HotPepperAppUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -137,6 +145,7 @@
 		385EB40E1EAD81CA0044F30E /* HotPepperApp */ = {
 			isa = PBXGroup;
 			children = (
+				385EB45C1EAD963D0044F30E /* View */,
 				385EB4491EAD87080044F30E /* Model */,
 				385EB4441EAD85C50044F30E /* Storyboard */,
 				385EB4431EAD85200044F30E /* Controller */,
@@ -210,6 +219,18 @@
 				385EB44E1EAD87740044F30E /* HotPepperApiManager.m */,
 			);
 			name = Model;
+			sourceTree = "<group>";
+		};
+		385EB45C1EAD963D0044F30E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				385EB45D1EAD96D80044F30E /* ShopTableViewDataSource.h */,
+				385EB45E1EAD96D80044F30E /* ShopTableViewDataSource.m */,
+				385EB4651EAD990B0044F30E /* ShopCell.h */,
+				385EB4661EAD990B0044F30E /* ShopCell.m */,
+				385EB4671EAD990B0044F30E /* ShopCell.xib */,
+			);
+			name = View;
 			sourceTree = "<group>";
 		};
 		92D97B7B4E29344B2EBD3007 /* Frameworks */ = {
@@ -341,6 +362,7 @@
 				385EB4481EAD85E70044F30E /* ShopList.storyboard in Resources */,
 				385EB41C1EAD81CA0044F30E /* Assets.xcassets in Resources */,
 				385EB4461EAD85DE0044F30E /* LaunchScreen.storyboard in Resources */,
+				385EB4691EAD990B0044F30E /* ShopCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -506,7 +528,9 @@
 				385EB4171EAD81CA0044F30E /* ShopListViewController.m in Sources */,
 				385EB4141EAD81CA0044F30E /* AppDelegate.m in Sources */,
 				385EB44C1EAD87360044F30E /* ShopEntity.m in Sources */,
+				385EB4681EAD990B0044F30E /* ShopCell.m in Sources */,
 				385EB4111EAD81CA0044F30E /* main.m in Sources */,
+				385EB45F1EAD96D80044F30E /* ShopTableViewDataSource.m in Sources */,
 				385EB44F1EAD87740044F30E /* HotPepperApiManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

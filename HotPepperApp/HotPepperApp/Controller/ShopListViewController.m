@@ -9,10 +9,13 @@
 #import "ShopListViewController.h"
 //#import "ShopEntity.h"
 #import "HotPepperApiManager.h"
-
+#import "ShopTableViewDataSource.h"
+#import "ShopCell.h"
 
 
 @interface ShopListViewController ()
+
+@property (nonatomic,strong) ShopTableViewDataSource *dataSource;
 
 @end
 
@@ -25,6 +28,14 @@
     NSString *area = @"五反田";
     HotPepperApiManager *manager = [[HotPepperApiManager alloc]init];
     [manager getShopInformation:area];
+    
+    UINib *nib = [UINib nibWithNibName:@"ShopCell" bundle:nil];
+    [self.tableView registerNib:nib forCellReuseIdentifier:@"Cell"];
+    
+    self.dataSource = [[ShopTableViewDataSource alloc]init];
+    self.tableView.dataSource = self.dataSource;
+    
+
     
     
     
