@@ -46,9 +46,10 @@ AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
     progress:nil
      success:^(NSURLSessionTask *task, id responseObject) {
          
+         NSMutableArray *shopEntityList = [[NSMutableArray alloc]init];
          
-         NSDictionary* results = responseObject[@"results"];
-         NSDictionary* shopDict    = results[@"shop"];
+         NSDictionary *results = responseObject[@"results"];
+         NSDictionary *shopDict    = results[@"shop"];
          
          for (NSDictionary<NSString *, NSString *> *shop in shopDict){
              ShopEntity *shopEntity = [[ShopEntity alloc]init];
@@ -66,9 +67,14 @@ AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
              NSLog(@"%@",shopEntity.name);
              NSLog(@"%@",shopEntity.averageBudget);
              
+             [shopEntityList addObject:shopEntity];
          }
          
-         
+         if ([self.delegate respondsToSelector:@selector(finishGettingInfo:)]) {
+            
+             [self.delegate finishGettingInfo:shopEntityList];
+         }
+                  
      } failure:^(NSURLSessionTask *operation, NSError *error) {
          NSLog(@"エラー: %@", error);
      }];

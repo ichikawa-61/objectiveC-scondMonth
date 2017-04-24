@@ -8,7 +8,17 @@
 
 #import <Foundation/Foundation.h>
 
+@protocol  APIHotpepprtDelegate<NSObject>
+
+@optional
+
+-(void)finishGettingInfo:(NSMutableArray*)shopList;
+
+@end
+
 @interface HotPepperApiManager : NSObject
+
+@property (nonatomic, weak)id <APIHotpepprtDelegate>delegate;
 -(void)getShopInformation:(NSString*)area;
 
 @end

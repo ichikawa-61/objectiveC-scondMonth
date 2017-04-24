@@ -10,6 +10,6 @@
 #import "ShopCell.h"
 @interface ShopTableViewDataSource : NSObject<UITableViewDataSource>
 
--(void)setTableViewData:(NSMutableArray<NSString*>*)shops;
+-(void)setUpTableView:(NSMutableArray<NSString*>*)shops;
 
 @end
