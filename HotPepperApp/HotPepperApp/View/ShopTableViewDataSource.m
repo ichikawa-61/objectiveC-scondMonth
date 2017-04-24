@@ -32,7 +32,7 @@
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     
-    return 5;
+    return self.shops.count;
     
 }
 
@@ -44,7 +44,13 @@
     
     ShopEntity *shop = [self.shops objectAtIndex:indexPath.row];
     
-    cell.shopName.text = [NSString stringWithFormat:@"%@", shop.name];
+    cell.nameLabel.text = [NSString stringWithFormat:@"%@", shop.name];
+    cell.genreLabel.text = [NSString stringWithFormat:@"%@", shop.genre];
+    cell.foodLabel.text = [NSString stringWithFormat:@"%@", shop.food];
+    cell.openLabel.text = [NSString stringWithFormat:@"%@", shop.open];
+    cell.budgetLabel.text = [NSString stringWithFormat:@"%@", shop.averageBudget];
+    cell.accessLabel.text = [NSString stringWithFormat:@"%@", shop.access];
+    cell.addressLabel.text = [NSString stringWithFormat:@"%@", shop.address];
     
    //画像のキャッシュ
     NSURL *url = [NSURL URLWithString:shop.logo];
@@ -55,6 +61,7 @@
     return cell;
     
 }
+
 
 
 @end
