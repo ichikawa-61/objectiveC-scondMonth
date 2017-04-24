@@ -21,7 +21,6 @@
 		385EB45F1EAD96D80044F30E /* ShopTableViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 385EB45E1EAD96D80044F30E /* ShopTableViewDataSource.m */; };
 		385EB4681EAD990B0044F30E /* ShopCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 385EB4661EAD990B0044F30E /* ShopCell.m */; };
 		385EB4691EAD990B0044F30E /* ShopCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 385EB4671EAD990B0044F30E /* ShopCell.xib */; };
-		385EB46C1EADB73E0044F30E /* ShopTableViewDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 385EB46B1EADB73E0044F30E /* ShopTableViewDelegate.m */; };
 		8BD570AB590EEEE590713DAC /* libPods-HotPepperAppUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 34B21B39CED9D39C4067C996 /* libPods-HotPepperAppUITests.a */; };
 		A0241DE3CACDA90C7FFF3A82 /* libPods-HotPepperApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8980BB0B49FF2E94462D1F57 /* libPods-HotPepperApp.a */; };
 /* End PBXBuildFile section */
@@ -71,8 +70,6 @@
 		385EB4651EAD990B0044F30E /* ShopCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ShopCell.h; path = View/ShopCell.h; sourceTree = "<group>"; };
 		385EB4661EAD990B0044F30E /* ShopCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ShopCell.m; path = View/ShopCell.m; sourceTree = "<group>"; };
 		385EB4671EAD990B0044F30E /* ShopCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ShopCell.xib; path = View/ShopCell.xib; sourceTree = "<group>"; };
-		385EB46A1EADB73E0044F30E /* ShopTableViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ShopTableViewDelegate.h; path = View/ShopTableViewDelegate.h; sourceTree = "<group>"; };
-		385EB46B1EADB73E0044F30E /* ShopTableViewDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ShopTableViewDelegate.m; path = View/ShopTableViewDelegate.m; sourceTree = "<group>"; };
 		75E7202B5BF48C5AE9F3C58B /* Pods-HotPepperApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HotPepperApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HotPepperApp/Pods-HotPepperApp.debug.xcconfig"; sourceTree = "<group>"; };
 		797219279D69AE50C954D16E /* libPods-HotPepperAppTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-HotPepperAppTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		809D0C4FE61B612629A18088 /* Pods-HotPepperAppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HotPepperAppUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-HotPepperAppUITests/Pods-HotPepperAppUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -232,8 +229,6 @@
 				385EB4651EAD990B0044F30E /* ShopCell.h */,
 				385EB4661EAD990B0044F30E /* ShopCell.m */,
 				385EB4671EAD990B0044F30E /* ShopCell.xib */,
-				385EB46A1EADB73E0044F30E /* ShopTableViewDelegate.h */,
-				385EB46B1EADB73E0044F30E /* ShopTableViewDelegate.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -532,7 +527,6 @@
 			files = (
 				385EB4171EAD81CA0044F30E /* ShopListViewController.m in Sources */,
 				385EB4141EAD81CA0044F30E /* AppDelegate.m in Sources */,
-				385EB46C1EADB73E0044F30E /* ShopTableViewDelegate.m in Sources */,
 				385EB44C1EAD87360044F30E /* ShopEntity.m in Sources */,
 				385EB4681EAD990B0044F30E /* ShopCell.m in Sources */,
 				385EB4111EAD81CA0044F30E /* main.m in Sources */,
