@@ -32,17 +32,21 @@ NSString *const LogoPath = @"photo.mobile.l";
 
 
 
--(void)getShopInformation:(NSString*)area{
+-(void)getShopInformation:(NSString*)area NumberOfSearch:(NSInteger)search{
+    
 
 //エンコード
 [area stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet alphanumericCharacterSet]];
+NSString *searchNumber = [NSString stringWithFormat:@"%ld", search];
 
 AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
 [manager GET:Url
-  parameters:@{@"key" :APIKey,
-               @"count" : APICount,
+  parameters:@{@"key"     :APIKey,
+               @"count"   :APICount,
                @"keyword" :area,
-               @"format" :APIFormat}
+               @"format"  :APIFormat,
+               @"start"   :searchNumber}
+ 
     progress:nil
      success:^(NSURLSessionTask *task, id responseObject) {
          
@@ -81,5 +85,7 @@ AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
      }];
 
 }
+
+
 
 @end
