@@ -8,7 +8,7 @@
 
 #import "ShopListViewController.h"
 //#import "ShopEntity.h"
-#import "HotPepperApiManager.h"
+//#import "HotPepperApiManager.h"
 #import "ShopTableViewDataSource.h"
 #import "ShopCell.h"
 
@@ -16,6 +16,7 @@
 @interface ShopListViewController ()
 
 @property (nonatomic,strong) ShopTableViewDataSource *dataSource;
+@property (nonatomic,strong) HotPepperApiManager *manager;
 
 @end
 
@@ -26,28 +27,26 @@
     [super viewDidLoad];
     
     NSString *area = @"五反田";
-    HotPepperApiManager *manager = [[HotPepperApiManager alloc]init];
-    [manager getShopInformation:area];
+    self.manager = [[HotPepperApiManager alloc]init];
+    self.manager.delegate = self;
+    [self.manager getShopInformation:area];
     
     UINib *nib = [UINib nibWithNibName:@"ShopCell" bundle:nil];
     [self.tableView registerNib:nib forCellReuseIdentifier:@"Cell"];
     
     self.dataSource = [[ShopTableViewDataSource alloc]init];
     self.tableView.dataSource = self.dataSource;
-    
-
-    
-    
-    
    
 }
 
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+-(void)finishGettingInfo:(NSMutableArray *)shopList{
     
+    [self.dataSource setUpTableView:shopList];
     
+    [self.tableView reloadData];
+
+
 }
 
 

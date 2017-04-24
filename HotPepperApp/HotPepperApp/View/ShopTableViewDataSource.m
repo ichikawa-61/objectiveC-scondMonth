@@ -17,7 +17,9 @@
 
 @implementation ShopTableViewDataSource
 
--(void)setTableViewData:(NSMutableArray<NSString*>*)shops{
+
+//controllerからapi情報を受け取ってプロパティに格納
+-(void)setUpTableView:(NSMutableArray<NSString*>*)shops{
     
     self.shops = shops;
 }

@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "HotPepperApiManager.h"
 
-@interface ShopListViewController : UIViewController
+@interface ShopListViewController : UIViewController<APIHotpepprtDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 
