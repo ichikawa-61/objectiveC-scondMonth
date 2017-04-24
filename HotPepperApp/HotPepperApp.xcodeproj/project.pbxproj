@@ -1,0 +1,530 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		385EB4111EAD81CA0044F30E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 385EB4101EAD81CA0044F30E /* main.m */; };
+		385EB4141EAD81CA0044F30E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 385EB4131EAD81CA0044F30E /* AppDelegate.m */; };
+		385EB4171EAD81CA0044F30E /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 385EB4161EAD81CA0044F30E /* ViewController.m */; };
+		385EB41A1EAD81CA0044F30E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 385EB4181EAD81CA0044F30E /* Main.storyboard */; };
+		385EB41C1EAD81CA0044F30E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 385EB41B1EAD81CA0044F30E /* Assets.xcassets */; };
+		385EB41F1EAD81CA0044F30E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 385EB41D1EAD81CA0044F30E /* LaunchScreen.storyboard */; };
+		385EB42A1EAD81CA0044F30E /* HotPepperAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 385EB4291EAD81CA0044F30E /* HotPepperAppTests.m */; };
+		385EB4351EAD81CA0044F30E /* HotPepperAppUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 385EB4341EAD81CA0044F30E /* HotPepperAppUITests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		385EB4261EAD81CA0044F30E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 385EB4041EAD81CA0044F30E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 385EB40B1EAD81CA0044F30E;
+			remoteInfo = HotPepperApp;
+		};
+		385EB4311EAD81CA0044F30E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 385EB4041EAD81CA0044F30E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 385EB40B1EAD81CA0044F30E;
+			remoteInfo = HotPepperApp;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		385EB40C1EAD81CA0044F30E /* HotPepperApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HotPepperApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		385EB4101EAD81CA0044F30E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		385EB4121EAD81CA0044F30E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		385EB4131EAD81CA0044F30E /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		385EB4151EAD81CA0044F30E /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		385EB4161EAD81CA0044F30E /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		385EB4191EAD81CA0044F30E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		385EB41B1EAD81CA0044F30E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		385EB41E1EAD81CA0044F30E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		385EB4201EAD81CA0044F30E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		385EB4251EAD81CA0044F30E /* HotPepperAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HotPepperAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		385EB4291EAD81CA0044F30E /* HotPepperAppTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HotPepperAppTests.m; sourceTree = "<group>"; };
+		385EB42B1EAD81CA0044F30E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		385EB4301EAD81CA0044F30E /* HotPepperAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HotPepperAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		385EB4341EAD81CA0044F30E /* HotPepperAppUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HotPepperAppUITests.m; sourceTree = "<group>"; };
+		385EB4361EAD81CA0044F30E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		385EB4091EAD81CA0044F30E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		385EB4221EAD81CA0044F30E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		385EB42D1EAD81CA0044F30E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		385EB4031EAD81CA0044F30E = {
+			isa = PBXGroup;
+			children = (
+				385EB40E1EAD81CA0044F30E /* HotPepperApp */,
+				385EB4281EAD81CA0044F30E /* HotPepperAppTests */,
+				385EB4331EAD81CA0044F30E /* HotPepperAppUITests */,
+				385EB40D1EAD81CA0044F30E /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		385EB40D1EAD81CA0044F30E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				385EB40C1EAD81CA0044F30E /* HotPepperApp.app */,
+				385EB4251EAD81CA0044F30E /* HotPepperAppTests.xctest */,
+				385EB4301EAD81CA0044F30E /* HotPepperAppUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		385EB40E1EAD81CA0044F30E /* HotPepperApp */ = {
+			isa = PBXGroup;
+			children = (
+				385EB4121EAD81CA0044F30E /* AppDelegate.h */,
+				385EB4131EAD81CA0044F30E /* AppDelegate.m */,
+				385EB4151EAD81CA0044F30E /* ViewController.h */,
+				385EB4161EAD81CA0044F30E /* ViewController.m */,
+				385EB4181EAD81CA0044F30E /* Main.storyboard */,
+				385EB41B1EAD81CA0044F30E /* Assets.xcassets */,
+				385EB41D1EAD81CA0044F30E /* LaunchScreen.storyboard */,
+				385EB4201EAD81CA0044F30E /* Info.plist */,
+				385EB40F1EAD81CA0044F30E /* Supporting Files */,
+			);
+			path = HotPepperApp;
+			sourceTree = "<group>";
+		};
+		385EB40F1EAD81CA0044F30E /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				385EB4101EAD81CA0044F30E /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		385EB4281EAD81CA0044F30E /* HotPepperAppTests */ = {
+			isa = PBXGroup;
+			children = (
+				385EB4291EAD81CA0044F30E /* HotPepperAppTests.m */,
+				385EB42B1EAD81CA0044F30E /* Info.plist */,
+			);
+			path = HotPepperAppTests;
+			sourceTree = "<group>";
+		};
+		385EB4331EAD81CA0044F30E /* HotPepperAppUITests */ = {
+			isa = PBXGroup;
+			children = (
+				385EB4341EAD81CA0044F30E /* HotPepperAppUITests.m */,
+				385EB4361EAD81CA0044F30E /* Info.plist */,
+			);
+			path = HotPepperAppUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		385EB40B1EAD81CA0044F30E /* HotPepperApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 385EB4391EAD81CA0044F30E /* Build configuration list for PBXNativeTarget "HotPepperApp" */;
+			buildPhases = (
+				385EB4081EAD81CA0044F30E /* Sources */,
+				385EB4091EAD81CA0044F30E /* Frameworks */,
+				385EB40A1EAD81CA0044F30E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = HotPepperApp;
+			productName = HotPepperApp;
+			productReference = 385EB40C1EAD81CA0044F30E /* HotPepperApp.app */;
+			productType = "com.apple.product-type.application";
+		};
+		385EB4241EAD81CA0044F30E /* HotPepperAppTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 385EB43C1EAD81CA0044F30E /* Build configuration list for PBXNativeTarget "HotPepperAppTests" */;
+			buildPhases = (
+				385EB4211EAD81CA0044F30E /* Sources */,
+				385EB4221EAD81CA0044F30E /* Frameworks */,
+				385EB4231EAD81CA0044F30E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				385EB4271EAD81CA0044F30E /* PBXTargetDependency */,
+			);
+			name = HotPepperAppTests;
+			productName = HotPepperAppTests;
+			productReference = 385EB4251EAD81CA0044F30E /* HotPepperAppTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		385EB42F1EAD81CA0044F30E /* HotPepperAppUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 385EB43F1EAD81CA0044F30E /* Build configuration list for PBXNativeTarget "HotPepperAppUITests" */;
+			buildPhases = (
+				385EB42C1EAD81CA0044F30E /* Sources */,
+				385EB42D1EAD81CA0044F30E /* Frameworks */,
+				385EB42E1EAD81CA0044F30E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				385EB4321EAD81CA0044F30E /* PBXTargetDependency */,
+			);
+			name = HotPepperAppUITests;
+			productName = HotPepperAppUITests;
+			productReference = 385EB4301EAD81CA0044F30E /* HotPepperAppUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		385EB4041EAD81CA0044F30E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0820;
+				ORGANIZATIONNAME = "Manami Ichikawa";
+				TargetAttributes = {
+					385EB40B1EAD81CA0044F30E = {
+						CreatedOnToolsVersion = 8.2.1;
+						ProvisioningStyle = Automatic;
+					};
+					385EB4241EAD81CA0044F30E = {
+						CreatedOnToolsVersion = 8.2.1;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 385EB40B1EAD81CA0044F30E;
+					};
+					385EB42F1EAD81CA0044F30E = {
+						CreatedOnToolsVersion = 8.2.1;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 385EB40B1EAD81CA0044F30E;
+					};
+				};
+			};
+			buildConfigurationList = 385EB4071EAD81CA0044F30E /* Build configuration list for PBXProject "HotPepperApp" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 385EB4031EAD81CA0044F30E;
+			productRefGroup = 385EB40D1EAD81CA0044F30E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				385EB40B1EAD81CA0044F30E /* HotPepperApp */,
+				385EB4241EAD81CA0044F30E /* HotPepperAppTests */,
+				385EB42F1EAD81CA0044F30E /* HotPepperAppUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		385EB40A1EAD81CA0044F30E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				385EB41F1EAD81CA0044F30E /* LaunchScreen.storyboard in Resources */,
+				385EB41C1EAD81CA0044F30E /* Assets.xcassets in Resources */,
+				385EB41A1EAD81CA0044F30E /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		385EB4231EAD81CA0044F30E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		385EB42E1EAD81CA0044F30E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		385EB4081EAD81CA0044F30E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				385EB4171EAD81CA0044F30E /* ViewController.m in Sources */,
+				385EB4141EAD81CA0044F30E /* AppDelegate.m in Sources */,
+				385EB4111EAD81CA0044F30E /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		385EB4211EAD81CA0044F30E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				385EB42A1EAD81CA0044F30E /* HotPepperAppTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		385EB42C1EAD81CA0044F30E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				385EB4351EAD81CA0044F30E /* HotPepperAppUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		385EB4271EAD81CA0044F30E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 385EB40B1EAD81CA0044F30E /* HotPepperApp */;
+			targetProxy = 385EB4261EAD81CA0044F30E /* PBXContainerItemProxy */;
+		};
+		385EB4321EAD81CA0044F30E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 385EB40B1EAD81CA0044F30E /* HotPepperApp */;
+			targetProxy = 385EB4311EAD81CA0044F30E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		385EB4181EAD81CA0044F30E /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				385EB4191EAD81CA0044F30E /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		385EB41D1EAD81CA0044F30E /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				385EB41E1EAD81CA0044F30E /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		385EB4371EAD81CA0044F30E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		385EB4381EAD81CA0044F30E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		385EB43A1EAD81CA0044F30E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = HotPepperApp/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = edu.myself.HotPepperApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		385EB43B1EAD81CA0044F30E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = HotPepperApp/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = edu.myself.HotPepperApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		385EB43D1EAD81CA0044F30E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = HotPepperAppTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = edu.myself.HotPepperAppTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HotPepperApp.app/HotPepperApp";
+			};
+			name = Debug;
+		};
+		385EB43E1EAD81CA0044F30E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = HotPepperAppTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = edu.myself.HotPepperAppTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HotPepperApp.app/HotPepperApp";
+			};
+			name = Release;
+		};
+		385EB4401EAD81CA0044F30E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = HotPepperAppUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = edu.myself.HotPepperAppUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = HotPepperApp;
+			};
+			name = Debug;
+		};
+		385EB4411EAD81CA0044F30E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = HotPepperAppUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = edu.myself.HotPepperAppUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = HotPepperApp;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		385EB4071EAD81CA0044F30E /* Build configuration list for PBXProject "HotPepperApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				385EB4371EAD81CA0044F30E /* Debug */,
+				385EB4381EAD81CA0044F30E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		385EB4391EAD81CA0044F30E /* Build configuration list for PBXNativeTarget "HotPepperApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				385EB43A1EAD81CA0044F30E /* Debug */,
+				385EB43B1EAD81CA0044F30E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		385EB43C1EAD81CA0044F30E /* Build configuration list for PBXNativeTarget "HotPepperAppTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				385EB43D1EAD81CA0044F30E /* Debug */,
+				385EB43E1EAD81CA0044F30E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		385EB43F1EAD81CA0044F30E /* Build configuration list for PBXNativeTarget "HotPepperAppUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				385EB4401EAD81CA0044F30E /* Debug */,
+				385EB4411EAD81CA0044F30E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 385EB4041EAD81CA0044F30E /* Project object */;
+}

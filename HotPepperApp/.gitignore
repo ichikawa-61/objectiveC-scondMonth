@@ -1,0 +1,12 @@
+#Mac system file
+.DS_Store
+
+#Xcode
+*.xcuserstate
+project.xcworkspace/
+xcuserdata/
+build/
+
+#vim
+*~
+*.swp
