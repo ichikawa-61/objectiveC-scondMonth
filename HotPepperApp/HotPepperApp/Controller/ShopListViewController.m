@@ -7,25 +7,23 @@
 //
 
 #import "ShopListViewController.h"
-//#import "ShopEntity.h"
-//#import "HotPepperApiManager.h"
+//View
 #import "ShopTableViewDataSource.h"
-#import "ShopTableViewDelegate.h"
 #import "ShopCell.h"
 
 
 @interface ShopListViewController ()
 
 @property (nonatomic,strong) ShopTableViewDataSource *dataSource;
-@property (nonatomic,strong) ShopTableViewDelegate *tableViewDelegate;
 @property (nonatomic,strong) HotPepperApiManager *manager;
 @property (nonatomic) NSInteger scrollNumber;
-@property (strong, nonatomic) UIActivityIndicatorView *indicator;
 @property (nonatomic, strong) NSString *area;
 
 @end
 
 @implementation ShopListViewController
+
+static NSString *const firstLoadNumber = @"1";
 
 
 - (void)viewDidLoad {
@@ -35,7 +33,7 @@
     self.navigationItem.title = @"五反田の飲食店";
     self.manager = [[HotPepperApiManager alloc]init];
     self.manager.delegate = self;
-    [self.manager getShopInformation:self.area NumberOfSearch:1];
+    [self.manager getShopInformation:self.area NumberOfSearch:firstLoadNumber];
     
     UINib *nib = [UINib nibWithNibName:@"ShopCell" bundle:nil];
     [self.tableView registerNib:nib forCellReuseIdentifier:@"Cell"];
@@ -74,35 +72,27 @@
     BOOL isBouncing = NO;
     isBouncing = (self.tableView.contentOffset.y >= (self.tableView.contentSize.height - self.tableView.bounds.size.height)) &  self.tableView.dragging;
     if(isBouncing){
-        [self.manager getShopInformation:self.area NumberOfSearch:51];
-    
+        
+        //NSInteger nextInfo =
+        [self.manager getShopInformation:self.area NumberOfSearch:APICount];
+        [self startReloadData];
     }
-        
-        
 }
-//
-//- (NSString *)searchNumberCast
-//{
-//    // 表示件数の取得
-//    NSUserDefaults *searchNumbserSetting = [NSUserDefaults standardUserDefaults];
-//    int searchNum = (APICount + 1) * 10;
-//    
-//    NSLog(@"いいいいいいいい%d",searchNum);
-//    NSString *sSearchNum = [NSString stringWithFormat:@"%d", searchNum];
-//    
-//    NSLog(@"uuuuuuuuuuuuuuu%@",sSearchNum);
-//    return  sSearchNum;
-//}
-//
-//// 検索開始値を永続化した値から確定
-//- (NSString *)loadStartNumber:(NSInteger)loadNextNumber
-//{
-//    NSInteger loadStartNum = [[self searchNumberCast] intValue] + ((loadNextNumber -1) * 10) + 1;
-//    NSString *loadStartStr = [NSString stringWithFormat:@"%ld",loadStartNum];
-//    return loadStartStr;
-//}
-//
 
+
+- (void)startReloadData{
+   
+    
+    CGRect footerFrame = self.tableView.tableFooterView.frame;
+    footerFrame.size.height += 10.0f;
+    
+    UIImageView *reloadImage = [[UIImageView alloc]init];
+    reloadImage.image = [UIImage imageNamed:@"refresh"];
+    [reloadImage setFrame:footerFrame];
+    [self.tableView setTableFooterView:reloadImage];
+    
+    
+}
 
 
 

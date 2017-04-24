@@ -14,30 +14,28 @@
 
 static NSString *const Url = @"https://webservice.recruit.co.jp/hotpepper/gourmet/v1/?";
 
-NSString *const APIKey    = @"bc37ec7b3d44efe0";
-NSString *const APICount  = @"50";
-NSString *const APIFormat = @"json";
+static NSString *const APIKey    = @"bc37ec7b3d44efe0";
+
+static NSString *const APIFormat = @"json";
+static NSString *const ShopId = @"id";
+static NSString *const ShopName = @"name";
+static NSString *const Access = @"access";
+static NSString *const Opening = @"open";
+static NSString *const Address = @"address";
+NSString *const  APICount  = @"50";
+
+static NSString *const FoodNamePath  = @"food.name";
+static NSString *const AverageBudgetPath = @"budget.average";
+static NSString *const GenreNamePath = @"genre.name";
+static NSString *const LogoPath = @"photo.mobile.l";
 
 
-NSString *const ShopId = @"id";
-NSString *const ShopName = @"name";
-NSString *const Access = @"access";
-NSString *const Opening = @"open";
-NSString *const Address = @"address";
 
-NSString *const FoodNamePath  = @"food.name";
-NSString *const AverageBudgetPath = @"budget.average";
-NSString *const GenreNamePath = @"genre.name";
-NSString *const LogoPath = @"photo.mobile.l";
-
-
-
--(void)getShopInformation:(NSString*)area NumberOfSearch:(NSInteger)search{
+-(void)getShopInformation:(NSString*)area NumberOfSearch:(NSString*)search{
     
 
 //エンコード
 [area stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet alphanumericCharacterSet]];
-NSString *searchNumber = [NSString stringWithFormat:@"%ld", search];
 
 AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
 [manager GET:Url
@@ -45,7 +43,7 @@ AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
                @"count"   :APICount,
                @"keyword" :area,
                @"format"  :APIFormat,
-               @"start"   :searchNumber}
+               @"start"   :search}
  
     progress:nil
      success:^(NSURLSessionTask *task, id responseObject) {
@@ -81,7 +79,7 @@ AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
          }
                   
      } failure:^(NSURLSessionTask *operation, NSError *error) {
-         NSLog(@"エラー: %@", error);
+         NSLog(@"通信に失敗しました: %@", error);
      }];
 
 }
