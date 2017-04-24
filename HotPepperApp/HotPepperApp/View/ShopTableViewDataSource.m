@@ -11,6 +11,7 @@
 
 @interface ShopTableViewDataSource()
 
+
 @property (nonatomic) NSMutableArray *shops;
 
 @end
@@ -42,6 +43,8 @@
     static NSString *CellIdentifier = @"Cell";
     ShopCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
+    
+    
     ShopEntity *shop = [self.shops objectAtIndex:indexPath.row];
     
     cell.nameLabel.text = [NSString stringWithFormat:@"%@", shop.name];
@@ -52,15 +55,30 @@
     cell.accessLabel.text = [NSString stringWithFormat:@"%@", shop.access];
     cell.addressLabel.text = [NSString stringWithFormat:@"%@", shop.address];
     
+    cell.budgetIcon.image = [UIImage imageNamed:@"money"];
+    cell.openIcon.image = [UIImage imageNamed:@"time"];
+    cell.accessIcon.image = [UIImage imageNamed:@"train"];
+    cell.addressIcon.image = [UIImage imageNamed:@"map"];
+    
    //画像のキャッシュ
-    NSURL *url = [NSURL URLWithString:shop.logo];
-    NSData *data = [NSData dataWithContentsOfURL:url];
-    UIImage *image = [UIImage imageWithData:data];
-    cell.logoImage.image = image;
+    
+    if(shop.logo){
+        NSURL *url = [NSURL URLWithString:shop.logo];
+        NSData *data = [NSData dataWithContentsOfURL:url];
+        UIImage *image = [UIImage imageWithData:data];
+        cell.logoImage.image = image;
+    }else{
+     
+        cell.logoImage.image = [UIImage imageNamed:@"noImage"];
+    
+    }
     
     return cell;
+        
     
 }
+
+
 
 
 

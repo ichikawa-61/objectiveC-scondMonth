@@ -18,7 +18,8 @@
 
 @interface HotPepperApiManager : NSObject
 
+//extern NSString *const APICount  = @"50";
 @property (nonatomic, weak)id <APIHotpepprtDelegate>delegate;
--(void)getShopInformation:(NSString*)area;
+-(void)getShopInformation:(NSString*)area NumberOfSearch:(NSInteger)search;
 
 @end
