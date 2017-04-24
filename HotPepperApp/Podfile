@@ -1,0 +1,20 @@
+# Uncomment the next line to define a global platform for your project
+# platform :ios, '9.0'
+
+target 'HotPepperApp' do
+  # Uncomment the next line if you're using Swift or would like to use dynamic frameworks
+  # use_frameworks!
+
+  # Pods for HotPepperApp
+  pod 'AFNetworking'
+  target 'HotPepperAppTests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+  target 'HotPepperAppUITests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+end

@@ -7,14 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0CD2F2194B133DE849638844 /* libPods-HotPepperAppTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 797219279D69AE50C954D16E /* libPods-HotPepperAppTests.a */; };
 		385EB4111EAD81CA0044F30E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 385EB4101EAD81CA0044F30E /* main.m */; };
 		385EB4141EAD81CA0044F30E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 385EB4131EAD81CA0044F30E /* AppDelegate.m */; };
-		385EB4171EAD81CA0044F30E /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 385EB4161EAD81CA0044F30E /* ViewController.m */; };
-		385EB41A1EAD81CA0044F30E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 385EB4181EAD81CA0044F30E /* Main.storyboard */; };
+		385EB4171EAD81CA0044F30E /* ShopListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 385EB4161EAD81CA0044F30E /* ShopListViewController.m */; };
 		385EB41C1EAD81CA0044F30E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 385EB41B1EAD81CA0044F30E /* Assets.xcassets */; };
-		385EB41F1EAD81CA0044F30E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 385EB41D1EAD81CA0044F30E /* LaunchScreen.storyboard */; };
 		385EB42A1EAD81CA0044F30E /* HotPepperAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 385EB4291EAD81CA0044F30E /* HotPepperAppTests.m */; };
 		385EB4351EAD81CA0044F30E /* HotPepperAppUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 385EB4341EAD81CA0044F30E /* HotPepperAppUITests.m */; };
+		385EB4461EAD85DE0044F30E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 385EB4451EAD85DE0044F30E /* LaunchScreen.storyboard */; };
+		385EB4481EAD85E70044F30E /* ShopList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 385EB4471EAD85E70044F30E /* ShopList.storyboard */; };
+		385EB44C1EAD87360044F30E /* ShopEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 385EB44B1EAD87360044F30E /* ShopEntity.m */; };
+		385EB44F1EAD87740044F30E /* HotPepperApiManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 385EB44E1EAD87740044F30E /* HotPepperApiManager.m */; };
+		8BD570AB590EEEE590713DAC /* libPods-HotPepperAppUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 34B21B39CED9D39C4067C996 /* libPods-HotPepperAppUITests.a */; };
+		A0241DE3CACDA90C7FFF3A82 /* libPods-HotPepperApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8980BB0B49FF2E94462D1F57 /* libPods-HotPepperApp.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,15 +40,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		338B069E9D95A646C66E11EE /* Pods-HotPepperAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HotPepperAppTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HotPepperAppTests/Pods-HotPepperAppTests.debug.xcconfig"; sourceTree = "<group>"; };
+		34B21B39CED9D39C4067C996 /* libPods-HotPepperAppUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-HotPepperAppUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		385EB40C1EAD81CA0044F30E /* HotPepperApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HotPepperApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		385EB4101EAD81CA0044F30E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		385EB4121EAD81CA0044F30E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		385EB4131EAD81CA0044F30E /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		385EB4151EAD81CA0044F30E /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		385EB4161EAD81CA0044F30E /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		385EB4191EAD81CA0044F30E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		385EB4151EAD81CA0044F30E /* ShopListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ShopListViewController.h; sourceTree = "<group>"; };
+		385EB4161EAD81CA0044F30E /* ShopListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ShopListViewController.m; sourceTree = "<group>"; };
 		385EB41B1EAD81CA0044F30E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		385EB41E1EAD81CA0044F30E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		385EB4201EAD81CA0044F30E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		385EB4251EAD81CA0044F30E /* HotPepperAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HotPepperAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		385EB4291EAD81CA0044F30E /* HotPepperAppTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HotPepperAppTests.m; sourceTree = "<group>"; };
@@ -51,6 +56,19 @@
 		385EB4301EAD81CA0044F30E /* HotPepperAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HotPepperAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		385EB4341EAD81CA0044F30E /* HotPepperAppUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HotPepperAppUITests.m; sourceTree = "<group>"; };
 		385EB4361EAD81CA0044F30E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		385EB4451EAD85DE0044F30E /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = Storyboard/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		385EB4471EAD85E70044F30E /* ShopList.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = ShopList.storyboard; path = Storyboard/ShopList.storyboard; sourceTree = "<group>"; };
+		385EB44A1EAD87360044F30E /* ShopEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ShopEntity.h; path = Model/ShopEntity.h; sourceTree = "<group>"; };
+		385EB44B1EAD87360044F30E /* ShopEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ShopEntity.m; path = Model/ShopEntity.m; sourceTree = "<group>"; };
+		385EB44D1EAD87740044F30E /* HotPepperApiManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HotPepperApiManager.h; path = Model/HotPepperApiManager.h; sourceTree = "<group>"; };
+		385EB44E1EAD87740044F30E /* HotPepperApiManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HotPepperApiManager.m; path = Model/HotPepperApiManager.m; sourceTree = "<group>"; };
+		75E7202B5BF48C5AE9F3C58B /* Pods-HotPepperApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HotPepperApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HotPepperApp/Pods-HotPepperApp.debug.xcconfig"; sourceTree = "<group>"; };
+		797219279D69AE50C954D16E /* libPods-HotPepperAppTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-HotPepperAppTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		809D0C4FE61B612629A18088 /* Pods-HotPepperAppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HotPepperAppUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-HotPepperAppUITests/Pods-HotPepperAppUITests.release.xcconfig"; sourceTree = "<group>"; };
+		8980BB0B49FF2E94462D1F57 /* libPods-HotPepperApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-HotPepperApp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8C60F94CC4870EFF906211F5 /* Pods-HotPepperAppUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HotPepperAppUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HotPepperAppUITests/Pods-HotPepperAppUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		AACD566CCFD9FA12CEF8AD7A /* Pods-HotPepperApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HotPepperApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-HotPepperApp/Pods-HotPepperApp.release.xcconfig"; sourceTree = "<group>"; };
+		C6EFBEE366ECEE5E2759B60C /* Pods-HotPepperAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HotPepperAppTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-HotPepperAppTests/Pods-HotPepperAppTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +76,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A0241DE3CACDA90C7FFF3A82 /* libPods-HotPepperApp.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -65,6 +84,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0CD2F2194B133DE849638844 /* libPods-HotPepperAppTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -72,12 +92,26 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8BD570AB590EEEE590713DAC /* libPods-HotPepperAppUITests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2E26B5F5BFE6922751E741E0 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				75E7202B5BF48C5AE9F3C58B /* Pods-HotPepperApp.debug.xcconfig */,
+				AACD566CCFD9FA12CEF8AD7A /* Pods-HotPepperApp.release.xcconfig */,
+				338B069E9D95A646C66E11EE /* Pods-HotPepperAppTests.debug.xcconfig */,
+				C6EFBEE366ECEE5E2759B60C /* Pods-HotPepperAppTests.release.xcconfig */,
+				8C60F94CC4870EFF906211F5 /* Pods-HotPepperAppUITests.debug.xcconfig */,
+				809D0C4FE61B612629A18088 /* Pods-HotPepperAppUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		385EB4031EAD81CA0044F30E = {
 			isa = PBXGroup;
 			children = (
@@ -85,6 +119,8 @@
 				385EB4281EAD81CA0044F30E /* HotPepperAppTests */,
 				385EB4331EAD81CA0044F30E /* HotPepperAppUITests */,
 				385EB40D1EAD81CA0044F30E /* Products */,
+				2E26B5F5BFE6922751E741E0 /* Pods */,
+				92D97B7B4E29344B2EBD3007 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -101,13 +137,11 @@
 		385EB40E1EAD81CA0044F30E /* HotPepperApp */ = {
 			isa = PBXGroup;
 			children = (
-				385EB4121EAD81CA0044F30E /* AppDelegate.h */,
-				385EB4131EAD81CA0044F30E /* AppDelegate.m */,
-				385EB4151EAD81CA0044F30E /* ViewController.h */,
-				385EB4161EAD81CA0044F30E /* ViewController.m */,
-				385EB4181EAD81CA0044F30E /* Main.storyboard */,
+				385EB4491EAD87080044F30E /* Model */,
+				385EB4441EAD85C50044F30E /* Storyboard */,
+				385EB4431EAD85200044F30E /* Controller */,
+				385EB4421EAD85160044F30E /* Other */,
 				385EB41B1EAD81CA0044F30E /* Assets.xcassets */,
-				385EB41D1EAD81CA0044F30E /* LaunchScreen.storyboard */,
 				385EB4201EAD81CA0044F30E /* Info.plist */,
 				385EB40F1EAD81CA0044F30E /* Supporting Files */,
 			);
@@ -140,6 +174,54 @@
 			path = HotPepperAppUITests;
 			sourceTree = "<group>";
 		};
+		385EB4421EAD85160044F30E /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				385EB4121EAD81CA0044F30E /* AppDelegate.h */,
+				385EB4131EAD81CA0044F30E /* AppDelegate.m */,
+			);
+			path = Other;
+			sourceTree = "<group>";
+		};
+		385EB4431EAD85200044F30E /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				385EB4151EAD81CA0044F30E /* ShopListViewController.h */,
+				385EB4161EAD81CA0044F30E /* ShopListViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		385EB4441EAD85C50044F30E /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				385EB4471EAD85E70044F30E /* ShopList.storyboard */,
+				385EB4451EAD85DE0044F30E /* LaunchScreen.storyboard */,
+			);
+			name = Storyboard;
+			sourceTree = "<group>";
+		};
+		385EB4491EAD87080044F30E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				385EB44A1EAD87360044F30E /* ShopEntity.h */,
+				385EB44B1EAD87360044F30E /* ShopEntity.m */,
+				385EB44D1EAD87740044F30E /* HotPepperApiManager.h */,
+				385EB44E1EAD87740044F30E /* HotPepperApiManager.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		92D97B7B4E29344B2EBD3007 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8980BB0B49FF2E94462D1F57 /* libPods-HotPepperApp.a */,
+				797219279D69AE50C954D16E /* libPods-HotPepperAppTests.a */,
+				34B21B39CED9D39C4067C996 /* libPods-HotPepperAppUITests.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -147,9 +229,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 385EB4391EAD81CA0044F30E /* Build configuration list for PBXNativeTarget "HotPepperApp" */;
 			buildPhases = (
+				FA2C63310D5624CF583D0407 /* [CP] Check Pods Manifest.lock */,
 				385EB4081EAD81CA0044F30E /* Sources */,
 				385EB4091EAD81CA0044F30E /* Frameworks */,
 				385EB40A1EAD81CA0044F30E /* Resources */,
+				E4C894ED5F03C478B296DD06 /* [CP] Embed Pods Frameworks */,
+				50330BEA4ABD97797F1691A9 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -164,9 +249,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 385EB43C1EAD81CA0044F30E /* Build configuration list for PBXNativeTarget "HotPepperAppTests" */;
 			buildPhases = (
+				AC58050CE7C82FC50A47948A /* [CP] Check Pods Manifest.lock */,
 				385EB4211EAD81CA0044F30E /* Sources */,
 				385EB4221EAD81CA0044F30E /* Frameworks */,
 				385EB4231EAD81CA0044F30E /* Resources */,
+				B803D549BF159EE60BA4EF1B /* [CP] Embed Pods Frameworks */,
+				93356E2B6E8B9385434D7E0C /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -182,9 +270,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 385EB43F1EAD81CA0044F30E /* Build configuration list for PBXNativeTarget "HotPepperAppUITests" */;
 			buildPhases = (
+				21F42F5E8940B4A4BE9C9D5C /* [CP] Check Pods Manifest.lock */,
 				385EB42C1EAD81CA0044F30E /* Sources */,
 				385EB42D1EAD81CA0044F30E /* Frameworks */,
 				385EB42E1EAD81CA0044F30E /* Resources */,
+				70A5EC705697298B4F5394A5 /* [CP] Embed Pods Frameworks */,
+				91CC82F75AE3ADDF22D8209E /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -207,6 +298,7 @@
 				TargetAttributes = {
 					385EB40B1EAD81CA0044F30E = {
 						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = PCCZJUYRT6;
 						ProvisioningStyle = Automatic;
 					};
 					385EB4241EAD81CA0044F30E = {
@@ -246,9 +338,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				385EB41F1EAD81CA0044F30E /* LaunchScreen.storyboard in Resources */,
+				385EB4481EAD85E70044F30E /* ShopList.storyboard in Resources */,
 				385EB41C1EAD81CA0044F30E /* Assets.xcassets in Resources */,
-				385EB41A1EAD81CA0044F30E /* Main.storyboard in Resources */,
+				385EB4461EAD85DE0044F30E /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -268,14 +360,154 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		21F42F5E8940B4A4BE9C9D5C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		50330BEA4ABD97797F1691A9 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HotPepperApp/Pods-HotPepperApp-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		70A5EC705697298B4F5394A5 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HotPepperAppUITests/Pods-HotPepperAppUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		91CC82F75AE3ADDF22D8209E /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HotPepperAppUITests/Pods-HotPepperAppUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		93356E2B6E8B9385434D7E0C /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HotPepperAppTests/Pods-HotPepperAppTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AC58050CE7C82FC50A47948A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		B803D549BF159EE60BA4EF1B /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HotPepperAppTests/Pods-HotPepperAppTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E4C894ED5F03C478B296DD06 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HotPepperApp/Pods-HotPepperApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FA2C63310D5624CF583D0407 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		385EB4081EAD81CA0044F30E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				385EB4171EAD81CA0044F30E /* ViewController.m in Sources */,
+				385EB4171EAD81CA0044F30E /* ShopListViewController.m in Sources */,
 				385EB4141EAD81CA0044F30E /* AppDelegate.m in Sources */,
+				385EB44C1EAD87360044F30E /* ShopEntity.m in Sources */,
 				385EB4111EAD81CA0044F30E /* main.m in Sources */,
+				385EB44F1EAD87740044F30E /* HotPepperApiManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -309,25 +541,6 @@
 			targetProxy = 385EB4311EAD81CA0044F30E /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		385EB4181EAD81CA0044F30E /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				385EB4191EAD81CA0044F30E /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		385EB41D1EAD81CA0044F30E /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				385EB41E1EAD81CA0044F30E /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		385EB4371EAD81CA0044F30E /* Debug */ = {
@@ -422,8 +635,10 @@
 		};
 		385EB43A1EAD81CA0044F30E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 75E7202B5BF48C5AE9F3C58B /* Pods-HotPepperApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = PCCZJUYRT6;
 				INFOPLIST_FILE = HotPepperApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = edu.myself.HotPepperApp;
@@ -433,8 +648,10 @@
 		};
 		385EB43B1EAD81CA0044F30E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AACD566CCFD9FA12CEF8AD7A /* Pods-HotPepperApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = PCCZJUYRT6;
 				INFOPLIST_FILE = HotPepperApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = edu.myself.HotPepperApp;
@@ -444,6 +661,7 @@
 		};
 		385EB43D1EAD81CA0044F30E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 338B069E9D95A646C66E11EE /* Pods-HotPepperAppTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = HotPepperAppTests/Info.plist;
@@ -456,6 +674,7 @@
 		};
 		385EB43E1EAD81CA0044F30E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C6EFBEE366ECEE5E2759B60C /* Pods-HotPepperAppTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = HotPepperAppTests/Info.plist;
@@ -468,6 +687,7 @@
 		};
 		385EB4401EAD81CA0044F30E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8C60F94CC4870EFF906211F5 /* Pods-HotPepperAppUITests.debug.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = HotPepperAppUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -479,6 +699,7 @@
 		};
 		385EB4411EAD81CA0044F30E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 809D0C4FE61B612629A18088 /* Pods-HotPepperAppUITests.release.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = HotPepperAppUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -507,6 +728,7 @@
 				385EB43B1EAD81CA0044F30E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		385EB43C1EAD81CA0044F30E /* Build configuration list for PBXNativeTarget "HotPepperAppTests" */ = {
 			isa = XCConfigurationList;
@@ -515,6 +737,7 @@
 				385EB43E1EAD81CA0044F30E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		385EB43F1EAD81CA0044F30E /* Build configuration list for PBXNativeTarget "HotPepperAppUITests" */ = {
 			isa = XCConfigurationList;
@@ -523,6 +746,7 @@
 				385EB4411EAD81CA0044F30E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
