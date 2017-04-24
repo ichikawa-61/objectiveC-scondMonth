@@ -9,5 +9,6 @@
 #import <Foundation/Foundation.h>
 
 @interface HotPepperApiManager : NSObject
+-(void)getShopInformation:(NSString*)area;
 
 @end
