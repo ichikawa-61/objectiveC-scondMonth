@@ -13,7 +13,7 @@
 
 @optional
 
--(void)finishGettingInfo:(NSMutableArray*)shopList;
+-(void)finishGettingInfo:(NSMutableArray *)shopList;
 
 @end
 

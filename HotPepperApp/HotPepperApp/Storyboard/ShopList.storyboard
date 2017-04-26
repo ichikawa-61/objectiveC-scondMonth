@@ -38,9 +38,9 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstAttribute="trailing" secondItem="51T-Rm-gVN" secondAttribute="trailing" id="71L-is-dCI"/>
                             <constraint firstItem="51T-Rm-gVN" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Lth-2j-bCQ"/>
                             <constraint firstItem="51T-Rm-gVN" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="Om0-gW-2jr"/>
-                            <constraint firstAttribute="trailing" secondItem="51T-Rm-gVN" secondAttribute="trailing" id="dVn-NJ-E8u"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="51T-Rm-gVN" secondAttribute="bottom" id="oTW-mN-6Cc"/>
                         </constraints>
                     </view>
