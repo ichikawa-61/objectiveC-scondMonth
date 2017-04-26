@@ -31,6 +31,7 @@ static NSString *const LogoPath = @"photo.mobile.l";
 
 
 
+# pragma mark Api method
 -(void)getShopInformation:(NSString*)area NumberOfSearch:(NSString*)search{
     
 
@@ -48,7 +49,7 @@ AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
     progress:nil
      success:^(NSURLSessionTask *task, id responseObject) {
          
-         NSMutableArray *shopEntityList = [[NSMutableArray alloc]init];
+         NSMutableArray<ShopEntity *> *shopEntityList = [[NSMutableArray alloc]init];
          
          NSDictionary *results = responseObject[@"results"];
          NSDictionary *shopDict    = results[@"shop"];

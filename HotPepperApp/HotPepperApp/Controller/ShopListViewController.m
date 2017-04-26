@@ -26,6 +26,7 @@
 static NSString *const firstLoadNumber = @"1";
 
 
+#pragma mark - private method
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -45,6 +46,8 @@ static NSString *const firstLoadNumber = @"1";
 }
 
 
+
+#pragma mark - HotPepperApiManager delegate method
 
 -(void)finishGettingInfo:(NSMutableArray *)shopList{
     

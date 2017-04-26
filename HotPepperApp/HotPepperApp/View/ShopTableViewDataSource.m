@@ -19,6 +19,8 @@
 @implementation ShopTableViewDataSource
 
 
+
+# pragma mark - UITableViewDataSource
 //controllerからapi情報を受け取ってプロパティに格納
 -(void)setUpTableView:(NSMutableArray<NSString*>*)shops{
     
