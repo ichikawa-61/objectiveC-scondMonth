@@ -8,6 +8,7 @@
 
 #import "HotPepperApiManager.h"
 #import "ShopEntity.h"
+#import "AreaNameEncoder.h"
 #import <AFNetworking/AFNetworking.h>
 
 @implementation HotPepperApiManager
@@ -31,57 +32,56 @@ static NSString *const LogoPath = @"photo.mobile.l";
 
 
 
-# pragma mark Api method
+# pragma mark - Api method
 -(void)getShopInformation:(NSString*)area NumberOfSearch:(NSString*)search{
     
-
-//エンコード
-[area stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet alphanumericCharacterSet]];
-
-AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
-[manager GET:Url
-  parameters:@{@"key"     :APIKey,
-               @"count"   :APICount,
-               @"keyword" :area,
-               @"format"  :APIFormat,
-               @"start"   :search}
- 
-    progress:nil
-     success:^(NSURLSessionTask *task, id responseObject) {
-         
-         NSMutableArray<ShopEntity *> *shopEntityList = [[NSMutableArray alloc]init];
-         
-         NSDictionary *results = responseObject[@"results"];
-         NSDictionary *shopDict    = results[@"shop"];
-         
-         for (NSDictionary<NSString *, NSString *> *shop in shopDict){
-             ShopEntity *shopEntity = [[ShopEntity alloc]init];
-             shopEntity.shopId  = shop[ShopId];
-             shopEntity.name    = shop[ShopName];
-             shopEntity.open    = shop[Opening];
-             shopEntity.address = shop[Address];
-             shopEntity.access  = shop[Access];
-             shopEntity.food    = [shop valueForKeyPath:FoodNamePath];
-             shopEntity.averageBudget
-             = [shop valueForKeyPath:AverageBudgetPath];
-             shopEntity.genre   = [shop valueForKeyPath:GenreNamePath];
-             shopEntity.logo    = [shop valueForKeyPath: LogoPath];
+    AreaNameEncoder *encoder = [[AreaNameEncoder alloc]init];
+    NSString * encodedArea = [encoder encodeAreaName:area];
+    
+    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+    [manager GET:Url
+      parameters:@{@"key"     :APIKey,
+                   @"count"   :APICount,
+                   @"keyword" :encodedArea,
+                   @"format"  :APIFormat,
+                   @"start"   :search}
+     
+        progress:nil
+         success:^(NSURLSessionTask *task, id responseObject) {
              
-             NSLog(@"%@",shopEntity.name);
-             NSLog(@"%@",shopEntity.averageBudget);
-             NSLog(@"%@",shopEntity.address);
+             NSMutableArray<ShopEntity *> *shopEntityList = [[NSMutableArray alloc]init];
              
-             [shopEntityList addObject:shopEntity];
-         }
-         
-         if ([self.delegate respondsToSelector:@selector(finishGettingInfo:)]) {
-            
-             [self.delegate finishGettingInfo:shopEntityList];
-         }
-                  
-     } failure:^(NSURLSessionTask *operation, NSError *error) {
-         NSLog(@"通信に失敗しました: %@", error);
-     }];
+             NSDictionary *results = responseObject[@"results"];
+             NSDictionary *shopDict    = results[@"shop"];
+             
+             for (NSDictionary<NSString *, NSString *> *shop in shopDict){
+                 ShopEntity *shopEntity = [[ShopEntity alloc]init];
+                 shopEntity.shopId  = shop[ShopId];
+                 shopEntity.name    = shop[ShopName];
+                 shopEntity.open    = shop[Opening];
+                 shopEntity.address = shop[Address];
+                 shopEntity.access  = shop[Access];
+                 shopEntity.food    = [shop valueForKeyPath:FoodNamePath];
+                 shopEntity.averageBudget
+                 = [shop valueForKeyPath:AverageBudgetPath];
+                 shopEntity.genre   = [shop valueForKeyPath:GenreNamePath];
+                 shopEntity.logo    = [shop valueForKeyPath: LogoPath];
+                 
+                 NSLog(@"%@",shopEntity.name);
+                 NSLog(@"%@",shopEntity.averageBudget);
+                 NSLog(@"%@",shopEntity.address);
+                 
+                 [shopEntityList addObject:shopEntity];
+             }
+             
+             if ([self.delegate respondsToSelector:@selector(finishGettingInfo:)]) {
+                
+                 [self.delegate finishGettingInfo:shopEntityList];
+             }
+                      
+         } failure:^(NSURLSessionTask *operation, NSError *error) {
+             NSLog(@"通信に失敗しました: %@", error);
+         }];
 
 }
 

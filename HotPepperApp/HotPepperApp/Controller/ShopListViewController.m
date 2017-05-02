@@ -18,6 +18,7 @@
 @property (nonatomic,strong) HotPepperApiManager *manager;
 @property (nonatomic) NSInteger scrollNumber;
 @property (nonatomic, strong) NSString *area;
+@property (nonatomic) UIRefreshControl *refreshControl;
 
 @end
 
@@ -27,6 +28,7 @@ static NSString *const firstLoadNumber = @"1";
 
 
 #pragma mark - private method
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -42,10 +44,12 @@ static NSString *const firstLoadNumber = @"1";
     self.dataSource = [[ShopTableViewDataSource alloc]init];
     self.tableView.dataSource = self.dataSource;
     self.tableView.delegate = self;
+    
+    self.refreshControl = [[UIRefreshControl alloc] init];
+    [self.refreshControl addTarget:self action:@selector(actionName) forControlEvents:UIControlEventValueChanged];
+    [self.tableView addSubview:self.refreshControl];
    
 }
-
-
 
 #pragma mark - HotPepperApiManager delegate method
 
@@ -81,7 +85,6 @@ static NSString *const firstLoadNumber = @"1";
         [self startReloadData];
     }
 }
-
 
 - (void)startReloadData{
    
