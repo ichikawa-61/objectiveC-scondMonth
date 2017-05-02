@@ -21,6 +21,7 @@
 
 
 # pragma mark - UITableViewDataSource
+
 //controllerからapi情報を受け取ってプロパティに格納
 -(void)setUpTableView:(NSMutableArray<NSString*>*)shops{
     
@@ -44,25 +45,21 @@
     
     static NSString *CellIdentifier = @"Cell";
     ShopCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
-    
-    
-    
+
     ShopEntity *shop = [self.shops objectAtIndex:indexPath.row];
     
-    cell.nameLabel.text = [NSString stringWithFormat:@"%@", shop.name];
-    cell.genreLabel.text = [NSString stringWithFormat:@"%@", shop.genre];
-    cell.foodLabel.text = [NSString stringWithFormat:@"%@", shop.food];
-    cell.openLabel.text = [NSString stringWithFormat:@"%@", shop.open];
-    cell.budgetLabel.text = [NSString stringWithFormat:@"%@", shop.averageBudget];
-    cell.accessLabel.text = [NSString stringWithFormat:@"%@", shop.access];
+    cell.nameLabel.text    = [NSString stringWithFormat:@"%@", shop.name];
+    cell.genreLabel.text   = [NSString stringWithFormat:@"%@", shop.genre];
+    cell.foodLabel.text    = [NSString stringWithFormat:@"%@", shop.food];
+    cell.openLabel.text    = [NSString stringWithFormat:@"%@", shop.open];
+    cell.budgetLabel.text  = [NSString stringWithFormat:@"%@", shop.averageBudget];
+    cell.accessLabel.text  = [NSString stringWithFormat:@"%@", shop.access];
     cell.addressLabel.text = [NSString stringWithFormat:@"%@", shop.address];
     
-    cell.budgetIcon.image = [UIImage imageNamed:@"money"];
-    cell.openIcon.image = [UIImage imageNamed:@"time"];
-    cell.accessIcon.image = [UIImage imageNamed:@"train"];
+    cell.budgetIcon.image  = [UIImage imageNamed:@"money"];
+    cell.openIcon.image    = [UIImage imageNamed:@"time"];
+    cell.accessIcon.image  = [UIImage imageNamed:@"train"];
     cell.addressIcon.image = [UIImage imageNamed:@"map"];
-    
-   //画像のキャッシュ
     
     if(shop.logo){
         NSURL *url = [NSURL URLWithString:shop.logo];
