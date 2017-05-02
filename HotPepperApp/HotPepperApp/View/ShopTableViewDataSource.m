@@ -4,15 +4,20 @@
 //
 //  Created by Manami Ichikawa on 4/24/17.
 //  Copyright © 2017 Manami Ichikawa. All rights reserved.
-//
 
+
+//View
 #import "ShopTableViewDataSource.h"
+//Model
 #import "ShopEntity.h"
 
 @interface ShopTableViewDataSource()
 
-
+@property (nonatomic) NSCache *cache;
+@property (nonatomic) NSFileManager *fileManager;
+@property (nonatomic) NSString *cacheDirectory;
 @property (nonatomic) NSMutableArray *shops;
+@property (nonatomic) NSOperationQueue* queue;
 
 @end
 
@@ -62,10 +67,43 @@
     cell.addressIcon.image = [UIImage imageNamed:@"map"];
     
     if(shop.logo){
-        NSURL *url = [NSURL URLWithString:shop.logo];
-        NSData *data = [NSData dataWithContentsOfURL:url];
-        UIImage *image = [UIImage imageWithData:data];
-        cell.logoImage.image = image;
+        self.cache = [[NSCache alloc]init];
+        self.cache.countLimit = 50;
+        //NSURL *url = [NSURL URLWithString:shop.logo];
+        //NSString *key = url.absoluteString;
+        //NSData *data = [NSData dataWithContentsOfURL:url];
+        UIImage* image = [self.cache objectForKey:indexPath];
+        
+        if (image) {
+            cell.logoImage.image = image;
+        } else {
+            
+            
+            //[cell.indicatorView startAnimating];
+            
+            NSURLRequest* request = [NSURLRequest requestWithURL:[NSURL URLWithString:shop.logo]];
+            
+            NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration ephemeralSessionConfiguration];
+            NSURLSession *session = [NSURLSession sessionWithConfiguration:configuration];
+//            
+//            [NSURLSession dataTaskWithRequest:completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
+//               
+//                UIImage *aImage = [UIImage imageWithData:data];
+//               NSLog(@"ううううううう"); 
+//                //[aCell.indicatorView stopAnimating];
+//                [self.cache setObject:aImage forKey:indexPath];
+//                //[collectionView reloadItemsAtIndexPaths:@[indexPath]];
+//                
+//                cell.logoImage.image = aImage;
+//            }];
+        }
+        
+        //UIImage *image = [UIImage imageWithData:data];
+        //[self.cache setObject:image forKey:key];
+        //[data writeToFile:key atomically:NO];
+       // NSData *data = [NSData dataWithContentsOfURL:url];
+      //  UIImage *image = [UIImage imageWithData:data];
+        //cell.logoImage.image = aImage;
     }else{
      
         cell.logoImage.image = [UIImage imageNamed:@"noImage"];

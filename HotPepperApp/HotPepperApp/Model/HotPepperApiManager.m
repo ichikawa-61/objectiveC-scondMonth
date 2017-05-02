@@ -4,11 +4,13 @@
 //
 //  Created by Manami Ichikawa on 4/24/17.
 //  Copyright © 2017 Manami Ichikawa. All rights reserved.
-//
 
+
+//Model
 #import "HotPepperApiManager.h"
 #import "ShopEntity.h"
 #import "AreaNameEncoder.h"
+//ライブラリ
 #import <AFNetworking/AFNetworking.h>
 
 @implementation HotPepperApiManager
@@ -29,7 +31,6 @@ static NSString *const FoodNamePath  = @"food.name";
 static NSString *const AverageBudgetPath = @"budget.average";
 static NSString *const GenreNamePath = @"genre.name";
 static NSString *const LogoPath = @"photo.mobile.l";
-
 
 
 # pragma mark - Api method

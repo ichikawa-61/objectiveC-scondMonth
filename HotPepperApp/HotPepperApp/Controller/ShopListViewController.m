@@ -19,6 +19,7 @@
 @property (nonatomic) NSInteger scrollNumber;
 @property (nonatomic, strong) NSString *area;
 @property (nonatomic) UIRefreshControl *refreshControl;
+@property (nonatomic, strong) UIActivityIndicatorView *indicator;
 
 @end
 
@@ -32,7 +33,7 @@ static NSString *const firstLoadNumber = @"1";
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.area = @"五反田";
+    self.area = @"八丁堀";
     self.navigationItem.title = @"五反田の飲食店";
     self.manager = [[HotPepperApiManager alloc]init];
     self.manager.delegate = self;
@@ -48,8 +49,35 @@ static NSString *const firstLoadNumber = @"1";
     self.refreshControl = [[UIRefreshControl alloc] init];
     [self.refreshControl addTarget:self action:@selector(actionName) forControlEvents:UIControlEventValueChanged];
     [self.tableView addSubview:self.refreshControl];
+    
+    self.indicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
+    [self.indicator setColor:[UIColor darkGrayColor]];
+    [self.indicator setHidesWhenStopped:YES];
+    [self.indicator stopAnimating];
+
    
 }
+
+
+- (void)startIndicator
+{
+    [self.indicator startAnimating];
+    CGRect footerFrame = self.tableView.tableFooterView.frame;
+    footerFrame.size.height += 10.0f;
+    
+    [self.indicator setFrame:footerFrame];
+    [self.tableView setTableFooterView:_indicator];
+}
+
+
+- (void)endIndicator
+{
+    [self.indicator stopAnimating];
+    [self.indicator removeFromSuperview];
+    [self.tableView setTableFooterView:nil];
+    
+}
+
 
 #pragma mark - HotPepperApiManager delegate method
 
@@ -79,12 +107,16 @@ static NSString *const firstLoadNumber = @"1";
     BOOL isBouncing = NO;
     isBouncing = (self.tableView.contentOffset.y >= (self.tableView.contentSize.height - self.tableView.bounds.size.height)) &  self.tableView.dragging;
     if(isBouncing){
+        [self startIndicator];
         
         //NSInteger nextInfo =
         [self.manager getShopInformation:self.area NumberOfSearch:APICount];
-        [self startReloadData];
+        //[self startReloadData];
+        [self startIndicator];
     }
 }
+
+
 
 - (void)startReloadData{
    
