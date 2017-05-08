@@ -21,6 +21,6 @@
 
 UIKIT_EXTERN NSString *const APICount;
 @property (nonatomic, weak)id <APIHotpepprtDelegate>delegate;
--(void)getShopInformation:(NSString*)area NumberOfSearch:(NSString*)search;
+-(void)getShopInformation:(NSString*)search;
 
 @end

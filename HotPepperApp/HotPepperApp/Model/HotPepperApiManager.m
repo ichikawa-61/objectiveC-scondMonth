@@ -25,8 +25,8 @@ static NSString *const ShopName = @"name";
 static NSString *const Access = @"access";
 static NSString *const Opening = @"open";
 static NSString *const Address = @"address";
-NSString *const  APICount  = @"50";
-
+NSString *const  APICount  = @"5";
+static NSString *const SearchArea = @"五反田";
 static NSString *const FoodNamePath  = @"food.name";
 static NSString *const AverageBudgetPath = @"budget.average";
 static NSString *const GenreNamePath = @"genre.name";
@@ -34,15 +34,16 @@ static NSString *const LogoPath = @"photo.mobile.l";
 
 
 # pragma mark - Api method
--(void)getShopInformation:(NSString*)area NumberOfSearch:(NSString*)search{
+-(void)getShopInformation:(NSString*)search{
     
     AreaNameEncoder *encoder = [[AreaNameEncoder alloc]init];
-    NSString * encodedArea = [encoder encodeAreaName:area];
-    
+    NSString * encodedArea = [encoder encodeAreaName:SearchArea];
+    NSString * countAPI = [self castNumberOfSeartch];
+    NSLog(@"%@",countAPI);
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
     [manager GET:Url
       parameters:@{@"key"     :APIKey,
-                   @"count"   :APICount,
+                   @"count"   :countAPI,
                    @"keyword" :encodedArea,
                    @"format"  :APIFormat,
                    @"start"   :search}
@@ -68,10 +69,6 @@ static NSString *const LogoPath = @"photo.mobile.l";
                  shopEntity.genre   = [shop valueForKeyPath:GenreNamePath];
                  shopEntity.logo    = [shop valueForKeyPath: LogoPath];
                  
-                 NSLog(@"%@",shopEntity.name);
-                 NSLog(@"%@",shopEntity.averageBudget);
-                 NSLog(@"%@",shopEntity.address);
-                 
                  [shopEntityList addObject:shopEntity];
              }
              
@@ -85,6 +82,33 @@ static NSString *const LogoPath = @"photo.mobile.l";
          }];
 
 }
+
+-(NSString*)castNumberOfSeartch{
+    
+    NSUserDefaults *searchNumbserSetting = [NSUserDefaults standardUserDefaults];
+    int searchNum = ([[searchNumbserSetting objectForKey:@"searchNumber"] intValue] + 1) * 10;
+    
+    NSLog(@"いいいいいいいい%d",searchNum);
+    NSString *sSearchNum = [NSString stringWithFormat:@"%d", searchNum];
+    
+    return  sSearchNum;
+
+}
+
+-(NSString*)loadStringNumber:(NSInteger)loadNextNumber{
+    
+    NSInteger loadStartNum = [[self castNumberOfSeartch] intValue] + ((loadNextNumber -1) * 10) + 1;
+    
+    NSLog(@"loadStartNum : %ld",loadStartNum);
+    NSLog(@"loadNextNumber : %ld",loadNextNumber);
+    NSString *loadStartStr = [NSString stringWithFormat:@"%ld",loadStartNum];
+    NSLog(@"loadStartStr :%@",loadStartStr);
+    return loadStartStr;
+
+
+}
+
+
 
 
 
