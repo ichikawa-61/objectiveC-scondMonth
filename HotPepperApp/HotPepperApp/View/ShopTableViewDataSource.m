@@ -10,7 +10,7 @@
 #import "ShopTableViewDataSource.h"
 //Model
 #import "ShopEntity.h"
-
+#import <SDWebImage/UIImageView+WebCache.h>
 @interface ShopTableViewDataSource()
 
 @property (nonatomic) NSCache *cache;
@@ -18,7 +18,7 @@
 @property (nonatomic) NSString *cacheDirectory;
 @property (nonatomic) NSMutableArray *shops;
 @property (nonatomic) NSOperationQueue* queue;
-
+@property (nonatomic, strong) UIActivityIndicatorView *indicator;
 @end
 
 @implementation ShopTableViewDataSource
@@ -41,77 +41,51 @@
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     
-    return self.shops.count;
+    NSInteger count = self.shops.count;
+    
+    NSLog(@"%ld",count );
+    return count +1;
     
 }
 
 
 -(UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    static NSString *CellIdentifier = @"Cell";
-    ShopCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
-
-    ShopEntity *shop = [self.shops objectAtIndex:indexPath.row];
-    
-    cell.nameLabel.text    = [NSString stringWithFormat:@"%@", shop.name];
-    cell.genreLabel.text   = [NSString stringWithFormat:@"%@", shop.genre];
-    cell.foodLabel.text    = [NSString stringWithFormat:@"%@", shop.food];
-    cell.openLabel.text    = [NSString stringWithFormat:@"%@", shop.open];
-    cell.budgetLabel.text  = [NSString stringWithFormat:@"%@", shop.averageBudget];
-    cell.accessLabel.text  = [NSString stringWithFormat:@"%@", shop.access];
-    cell.addressLabel.text = [NSString stringWithFormat:@"%@", shop.address];
-    
-    cell.budgetIcon.image  = [UIImage imageNamed:@"money"];
-    cell.openIcon.image    = [UIImage imageNamed:@"time"];
-    cell.accessIcon.image  = [UIImage imageNamed:@"train"];
-    cell.addressIcon.image = [UIImage imageNamed:@"map"];
-    
-    if(shop.logo){
-        self.cache = [[NSCache alloc]init];
-        self.cache.countLimit = 50;
-        //NSURL *url = [NSURL URLWithString:shop.logo];
-        //NSString *key = url.absoluteString;
-        //NSData *data = [NSData dataWithContentsOfURL:url];
-        UIImage* image = [self.cache objectForKey:indexPath];
+    if(indexPath.row == self.shops.count){
         
-        if (image) {
-            cell.logoImage.image = image;
-        } else {
-            
-            
-            //[cell.indicatorView startAnimating];
-            
-            NSURLRequest* request = [NSURLRequest requestWithURL:[NSURL URLWithString:shop.logo]];
-            
-            NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration ephemeralSessionConfiguration];
-            NSURLSession *session = [NSURLSession sessionWithConfiguration:configuration];
-//            
-//            [NSURLSession dataTaskWithRequest:completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
-//               
-//                UIImage *aImage = [UIImage imageWithData:data];
-//               NSLog(@"ううううううう"); 
-//                //[aCell.indicatorView stopAnimating];
-//                [self.cache setObject:aImage forKey:indexPath];
-//                //[collectionView reloadItemsAtIndexPaths:@[indexPath]];
-//                
-//                cell.logoImage.image = aImage;
-//            }];
-        }
+        UITableViewCell *loadNextCell = [UITableViewCell new];
+        loadNextCell.textLabel.text = @"さらに読み込む";
         
-        //UIImage *image = [UIImage imageWithData:data];
-        //[self.cache setObject:image forKey:key];
-        //[data writeToFile:key atomically:NO];
-       // NSData *data = [NSData dataWithContentsOfURL:url];
-      //  UIImage *image = [UIImage imageWithData:data];
-        //cell.logoImage.image = aImage;
+        return loadNextCell;
     }else{
-     
-        cell.logoImage.image = [UIImage imageNamed:@"noImage"];
-    
+        
+        ShopEntity *shop = [self.shops objectAtIndex:indexPath.row];
+        static NSString *CellIdentifier = @"Cell";
+        ShopCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+
+        cell.nameLabel.text    = [NSString stringWithFormat:@"%@", shop.name];
+        cell.genreLabel.text   = [NSString stringWithFormat:@"%@", shop.genre];
+        cell.foodLabel.text    = [NSString stringWithFormat:@"%@", shop.food];
+        cell.openLabel.text    = [NSString stringWithFormat:@"%@", shop.open];
+        cell.budgetLabel.text  = [NSString stringWithFormat:@"%@", shop.averageBudget];
+        cell.accessLabel.text  = [NSString stringWithFormat:@"%@", shop.access];
+        cell.addressLabel.text = [NSString stringWithFormat:@"%@", shop.address];
+        
+        cell.budgetIcon.image  = [UIImage imageNamed:@"money"];
+        cell.openIcon.image    = [UIImage imageNamed:@"time"];
+        cell.accessIcon.image  = [UIImage imageNamed:@"train"];
+        cell.addressIcon.image = [UIImage imageNamed:@"map"];
+        
+        NSURL *url = [NSURL URLWithString:shop.logo];
+        UIImage *placeholderImage = [UIImage imageNamed:@"noImage"];
+                    [cell.logoImage sd_setImageWithURL:url
+                   placeholderImage:placeholderImage];
+        
+       return cell;
+        
     }
     
-    return cell;
-        
+    
     
 }
 

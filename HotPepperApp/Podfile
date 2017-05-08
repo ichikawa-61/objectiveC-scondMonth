@@ -7,6 +7,7 @@ target 'HotPepperApp' do
 
   # Pods for HotPepperApp
   pod 'AFNetworking'
+  pod 'SDWebImage'
   target 'HotPepperAppTests' do
     inherit! :search_paths
     # Pods for testing

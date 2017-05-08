@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 #import "ShopCell.h"
+#import "LoadNextCell.h"
+//#import <SDWebImage/UIImageView+WebCache.h>
 @interface ShopTableViewDataSource : NSObject<UITableViewDataSource>
 
 -(void)setUpTableView:(NSMutableArray<NSString*>*)shops;
