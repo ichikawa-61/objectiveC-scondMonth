@@ -34,7 +34,16 @@ static NSString *const LogoPath = @"photo.mobile.l";
 
 
 # pragma mark - Api method
--(void)getShopInformation:(NSString*)search{
+-(void)getShopInformation:(NSInteger)search{
+    
+    NSString *loadStartStr;
+    if(search == 0){
+        loadStartStr = @"1";
+        
+    }else{
+        
+        loadStartStr = [self loadStringNumber:search];
+    }
     
     AreaNameEncoder *encoder = [[AreaNameEncoder alloc]init];
     NSString * encodedArea = [encoder encodeAreaName:SearchArea];
@@ -46,7 +55,7 @@ static NSString *const LogoPath = @"photo.mobile.l";
                    @"count"   :countAPI,
                    @"keyword" :encodedArea,
                    @"format"  :APIFormat,
-                   @"start"   :search}
+                   @"start"   :loadStartStr}
      
         progress:nil
          success:^(NSURLSessionTask *task, id responseObject) {
@@ -80,32 +89,28 @@ static NSString *const LogoPath = @"photo.mobile.l";
          } failure:^(NSURLSessionTask *operation, NSError *error) {
              NSLog(@"通信に失敗しました: %@", error);
          }];
-
 }
 
 -(NSString*)castNumberOfSeartch{
     
     NSUserDefaults *searchNumbserSetting = [NSUserDefaults standardUserDefaults];
-    int searchNum = ([[searchNumbserSetting objectForKey:@"searchNumber"] intValue] + 1) * 10;
+    int searchNum = ([[searchNumbserSetting objectForKey:@"searchNumber"] intValue] + 1) * 50;
     
     NSLog(@"いいいいいいいい%d",searchNum);
     NSString *sSearchNum = [NSString stringWithFormat:@"%d", searchNum];
     
     return  sSearchNum;
-
 }
 
 -(NSString*)loadStringNumber:(NSInteger)loadNextNumber{
     
-    NSInteger loadStartNum = [[self castNumberOfSeartch] intValue] + ((loadNextNumber -1) * 10) + 1;
+    NSInteger loadStartNum = [[self castNumberOfSeartch] intValue] + ((loadNextNumber -1) * 50) + 1;
     
     NSLog(@"loadStartNum : %ld",loadStartNum);
     NSLog(@"loadNextNumber : %ld",loadNextNumber);
     NSString *loadStartStr = [NSString stringWithFormat:@"%ld",loadStartNum];
     NSLog(@"loadStartStr :%@",loadStartStr);
     return loadStartStr;
-
-
 }
 
 

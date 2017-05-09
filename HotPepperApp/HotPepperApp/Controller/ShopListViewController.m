@@ -38,7 +38,7 @@ static NSString *const firstLoadNumber = @"1";
     self.navigationItem.title = @"五反田の飲食店";
     self.manager = [[HotPepperApiManager alloc]init];
     self.manager.delegate = self;
-    [self.manager getShopInformation:firstLoadNumber];
+    [self.manager getShopInformation:loadNextCount];
     
     UINib *nib = [UINib nibWithNibName:@"ShopCell" bundle:nil];
     [self.tableView registerNib:nib forCellReuseIdentifier:@"Cell"];
@@ -122,11 +122,11 @@ static NSString *const firstLoadNumber = @"1";
     
     if(indexPath.row == self.scrollNumber){
         
+        loadNextCount++;
+        [self.manager getShopInformation:loadNextCount];
         [self showIndicatorOnTheBottom];
-    
+        [self.tableView reloadData];
     }
-
-
 }
 
 
