@@ -23,8 +23,6 @@
 
 @implementation ShopTableViewDataSource
 
-
-
 # pragma mark - UITableViewDataSource
 
 //controllerからapi情報を受け取ってプロパティに格納
