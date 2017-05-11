@@ -10,7 +10,6 @@
 
 @interface RefreshView()
 @property (weak, nonatomic) IBOutlet UILabel *failureLb;
-@property (weak, nonatomic) IBOutlet UIButton *refreshButton;
 - (IBAction)tellControllerButtonPushed:(id)sender;
 
 @end
@@ -24,18 +23,6 @@
     return view;
 }
 
-//-(void)setDelegate:(id<RefreshViewDelegate>)delegate{
-//    self.delegate = delegate;
-//    
-//    [self.refreshButton addTarget:delegate action:@selector(retryAccessApi) forControlEvents:UIControlEventTouchUpInside];
-//
-//}
-
-
-- (IBAction)retryGettingInfo:(id)sender {
-    
-    
-}
 
 - (IBAction)tellControllerButtonPushed:(id)sender {
     

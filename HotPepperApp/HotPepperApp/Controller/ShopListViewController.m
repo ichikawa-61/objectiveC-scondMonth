@@ -56,11 +56,11 @@ static NSString *const firstLoadNumber = @"1";
     self.tableView.dataSource = self.dataSource;
     self.tableView.delegate = self;
     
-//    self.refreshControl = [[UIRefreshControl alloc] init];
-//    [self.refreshControl addTarget:self action:@selector(actionName) forControlEvents:UIControlEventValueChanged];
-//    [self.tableView addSubview:self.refreshControl];
-        //[self.indicator setHidesWhenStopped:NO];
-
+    self.refreshControl = [[UIRefreshControl alloc] init];
+    [self.refreshControl addTarget:self action:@selector(pullToRefresh) forControlEvents:UIControlEventValueChanged];
+    [self.tableView addSubview:self.refreshControl];
+    self.tableView.alwaysBounceVertical = YES;
+  
     [self showIndicator];
    
 }
@@ -117,9 +117,6 @@ static NSString *const firstLoadNumber = @"1";
     
     //インジケーターは非表示にする
     [self endIndicator];
-    //[self.indicator stopAnimating];
-    //[self.indicator removeFromSuperview];
-    
 }
 
 -(void)failGettingInfo{
@@ -170,6 +167,14 @@ forRowAtIndexPath:(NSIndexPath *)indexPath {
 - (IBAction)retryGettingInfo:(id)sender {
     
     NSLog(@"OK！");
+}
+
+-(void)pullToRefresh{
+    
+    NSLog(@"UIRefresh呼ばれた");
+    [self.refreshControl beginRefreshing];
+    [self.manager getShopInformation:loadNextCount];
+    [self.refreshControl endRefreshing];
 }
 
 
