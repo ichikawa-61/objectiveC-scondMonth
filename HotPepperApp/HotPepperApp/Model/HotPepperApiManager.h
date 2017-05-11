@@ -14,6 +14,7 @@
 @optional
 
 -(void)finishGettingInfo:(NSMutableArray *)shopList;
+-(void)failGettingInfo;
 
 @end
 

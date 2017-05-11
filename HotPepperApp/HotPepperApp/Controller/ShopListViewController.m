@@ -10,15 +10,16 @@
 //View
 #import "ShopTableViewDataSource.h"
 #import "ShopCell.h"
+#import "RefreshView.h"
 
 
-NSInteger loadNextCount = 0;
-@interface ShopListViewController ()
+NSInteger loadNextCount = 1;
+@interface ShopListViewController ()<RefreshViewDelegate>
 
 @property (nonatomic,strong) ShopTableViewDataSource *dataSource;
 @property (nonatomic,strong) HotPepperApiManager *manager;
 @property (nonatomic) NSInteger scrollNumber;
-//@property (nonatomic, strong) NSString *area;
+@property (nonatomic, strong) RefreshView *refreshView;
 @property (nonatomic) UIRefreshControl *refreshControl;
 @property (nonatomic, strong) UIActivityIndicatorView *indicator;
 
@@ -34,18 +35,23 @@ static NSString *const firstLoadNumber = @"1";
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    //self.area = @"五反田";
     self.navigationItem.title = @"五反田の飲食店";
     self.manager = [[HotPepperApiManager alloc]init];
     self.manager.delegate = self;
     [self.manager getShopInformation:loadNextCount];
     
+   
+    //[self.view addSubview:self.refreshView];
+    //[self.view bringSubviewToFront:self.refreshView];
+    //self.view = self.refreshView;
+    
+    
     UINib *nib = [UINib nibWithNibName:@"ShopCell" bundle:nil];
     [self.tableView registerNib:nib forCellReuseIdentifier:@"Cell"];
-    
+
     UINib *loadNib = [UINib nibWithNibName:@"LoadNextCell" bundle:nil];
     [self.tableView registerNib:loadNib forCellReuseIdentifier:@"NextCell"];
-    
+
     self.dataSource = [[ShopTableViewDataSource alloc]init];
     self.tableView.dataSource = self.dataSource;
     self.tableView.delegate = self;
@@ -67,19 +73,22 @@ static NSString *const firstLoadNumber = @"1";
     [self.indicator startAnimating];
     [self.view addSubview:self.indicator];
     [self.view bringSubviewToFront:self.indicator];
+    
 }
+
 
 //スクロールで最終行まで行ったら呼ばれる
-- (void)showIndicatorOnTheBottom
-{
-    [self.indicator startAnimating];
-    CGRect footerFrame = self.tableView.tableFooterView.frame;
-    footerFrame.size.height += 10.0f;
-    
-    [self.indicator setFrame:footerFrame];
-    [self.tableView setTableFooterView:self.indicator];
-}
-
+//- (void)showIndicatorOnTheBottom
+//{
+//    [self.indicator startAnimating];
+//    CGRect footerFrame = self.tableView.tableFooterView.frame;
+//    footerFrame.size.height += 10.0f;
+//    NSLog(@"下まで行ったよ");
+//    [self.indicator setFrame:footerFrame];
+//    [self.tableView setTableFooterView:self.indicator];
+//    
+//    }
+//
 
 - (void)endIndicator
 {
@@ -88,13 +97,20 @@ static NSString *const firstLoadNumber = @"1";
     
 }
 
+#pragma mark - RefreshViewDelegate method
+
+-(void)retryAccessApi{
+
+   [self.manager getShopInformation:loadNextCount];
+}
+
 
 #pragma mark - HotPepperApiManager delegate method
 
 -(void)finishGettingInfo:(NSMutableArray *)shopList{
     
     
-    [self.dataSource setUpTableView:shopList];
+    [self.dataSource setUpTableView:shopList CountOfLoad:loadNextCount];
     
     self.scrollNumber = shopList.count;
     [self.tableView reloadData];
@@ -104,6 +120,16 @@ static NSString *const firstLoadNumber = @"1";
     //[self.indicator stopAnimating];
     //[self.indicator removeFromSuperview];
     
+}
+
+-(void)failGettingInfo{
+    
+    [self endIndicator];
+    
+    self.refreshView = [RefreshView refreshView];
+    self.refreshView.delegate = self;
+    [self.view addSubview:self.refreshView];
+    [self.view bringSubviewToFront:self.refreshView];
 }
 
 #pragma mark - UITableViewDelegate
@@ -124,10 +150,29 @@ static NSString *const firstLoadNumber = @"1";
         
         loadNextCount++;
         [self.manager getShopInformation:loadNextCount];
-        [self showIndicatorOnTheBottom];
+        
+        CGRect footerFrame = self.tableView.tableFooterView.frame;
+        footerFrame.size.height += 10.0f;
+
+        [self.indicator setFrame:footerFrame];
+        [self.tableView setTableFooterView:self.indicator];
+        //[self showIndicatorOnTheBottom];
         [self.tableView reloadData];
+        NSLog(@"リロードするよ");
     }
 }
+
+-(void)tableView:(UITableView*)tableView willDisplayCell:(UITableViewCell *)cell
+forRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+}
+
+- (IBAction)retryGettingInfo:(id)sender {
+    
+    NSLog(@"OK！");
+}
+
+
 
 
 
@@ -136,17 +181,23 @@ static NSString *const firstLoadNumber = @"1";
 //スクロールするたびに呼ばれるメソッド
 //- (void)scrollViewDidScroll:(UIScrollView *)scrollView
 //{
-//    
+//
 //    BOOL isBouncing = NO;
 //    isBouncing = (self.tableView.contentOffset.y >= (self.tableView.contentSize.height - self.tableView.bounds.size.height)) &  self.tableView.dragging;
 //    if(isBouncing){
 //        
 //        //最後のせるまで行ったらインジゲーターを出す
-//        [self startIndicator];
-//        
-//        [self.manager getShopInformation:self.area NumberOfSearch:APICount];
+//       // [self startIndicator];
+//        [self showIndicatorOnTheBottom];
+//        //[self.manager getShopInformation:self.area NumberOfSearch:APICount];
 //        //[self startReloadData];
 //        //[self startIndicator];
+//        
+//        loadNextCount++;
+//        [self.manager getShopInformation:loadNextCount];
+//        [self showIndicatorOnTheBottom];
+//        [self.tableView reloadData];
+//
 //    }
 //}
 //

@@ -19,6 +19,7 @@
 @property (nonatomic) NSMutableArray *shops;
 @property (nonatomic) NSOperationQueue* queue;
 @property (nonatomic, strong) UIActivityIndicatorView *indicator;
+@property (nonatomic) NSInteger countOfLoad;
 @end
 
 @implementation ShopTableViewDataSource
@@ -26,9 +27,17 @@
 # pragma mark - UITableViewDataSource
 
 //controllerからapi情報を受け取ってプロパティに格納
--(void)setUpTableView:(NSMutableArray<NSString*>*)shops{
+-(void)setUpTableView:(NSMutableArray<NSString*>*)shops CountOfLoad:(NSInteger)count{
+    NSLog(@"%ld",shops.count);
+    self.countOfLoad = count;
+    NSLog(@"self.countOfLoad: %ld",self.countOfLoad);
     
-    self.shops = shops;
+    if(count == 1){
+        self.shops = shops;
+    }else{
+        [self.shops arrayByAddingObjectsFromArray :shops];
+    }
+    NSLog(@"self.shops.count: %ld",self.shops.count);
 }
 
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
@@ -39,10 +48,10 @@
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     
-    NSInteger count = self.shops.count;
+    NSInteger count = self.shops.count+1;
     
-    NSLog(@"%ld",count );
-    return count +1;
+    NSLog(@"count*self.countOfLoad: %ld", count*self.countOfLoad);
+    return count*self.countOfLoad;
     
 }
 
@@ -56,7 +65,8 @@
         
         return loadNextCell;
     }else{
-        
+    
+        NSLog(@"indexPath.row: %ld",indexPath.row);
         ShopEntity *shop = [self.shops objectAtIndex:indexPath.row];
         static NSString *CellIdentifier = @"Cell";
         ShopCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
@@ -82,8 +92,6 @@
        return cell;
         
     }
-    
-    
     
 }
 
