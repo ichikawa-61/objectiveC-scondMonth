@@ -12,6 +12,6 @@
 //#import <SDWebImage/UIImageView+WebCache.h>
 @interface ShopTableViewDataSource : NSObject<UITableViewDataSource>
 
--(void)setUpTableView:(NSMutableArray<NSString*>*)shops;
+-(void)setUpTableView:(NSMutableArray<NSString*>*)shops CountOfLoad:(NSInteger)count;
 
 @end
