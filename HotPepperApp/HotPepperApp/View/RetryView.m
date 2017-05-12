@@ -6,28 +6,28 @@
 //  Copyright © 2017 Manami Ichikawa. All rights reserved.
 //
 
-#import "RefreshView.h"
+#import "RetryView.h"
 
-@interface RefreshView()
+@interface RetryView()
 @property (weak, nonatomic) IBOutlet UILabel *failureLb;
 - (IBAction)tellControllerButtonPushed:(id)sender;
 
 @end
 
-@implementation RefreshView
+@implementation RetryView
+
+#pragma mark - initialize view method
 
 +(instancetype)refreshView{
 
     UINib *nib = [UINib nibWithNibName:@"RefreshView" bundle:nil];
-    RefreshView *view = [nib instantiateWithOwner:self options:nil][0];
+    RetryView *view = [nib instantiateWithOwner:self options:nil][0];
     return view;
 }
-
 
 - (IBAction)tellControllerButtonPushed:(id)sender {
     
     [self.delegate retryAccessApi];
-    
-    NSLog(@"成功〜〜〜！");
 }
+
 @end

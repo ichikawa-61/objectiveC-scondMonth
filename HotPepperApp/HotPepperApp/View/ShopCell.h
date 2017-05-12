@@ -10,24 +10,16 @@
 
 @interface ShopCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet UIImageView *logoImage;
-
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *foodLabel;
 @property (weak, nonatomic) IBOutlet UILabel *genreLabel;
-
 @property (weak, nonatomic) IBOutlet UILabel *budgetLabel;
-
 @property (weak, nonatomic) IBOutlet UILabel *openLabel;
 @property (weak, nonatomic) IBOutlet UILabel *accessLabel;
-
 @property (weak, nonatomic) IBOutlet UILabel *addressLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *budgetIcon;
-
 @property (weak, nonatomic) IBOutlet UIImageView *openIcon;
-
 @property (weak, nonatomic) IBOutlet UIImageView *accessIcon;
 @property (weak, nonatomic) IBOutlet UIImageView *addressIcon;
-
-
 
 @end

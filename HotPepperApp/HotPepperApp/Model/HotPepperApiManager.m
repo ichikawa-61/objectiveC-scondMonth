@@ -64,7 +64,6 @@ static NSString *const LogoPath = @"photo.mobile.l";
              
              NSDictionary *results = responseObject[@"results"];
              NSDictionary *shopDict    = results[@"shop"];
-             NSLog(@"Apiうつよ！");
              for (NSDictionary<NSString *, NSString *> *shop in shopDict){
                  ShopEntity *shopEntity = [[ShopEntity alloc]init];
                  shopEntity.shopId  = shop[ShopId];
@@ -78,6 +77,7 @@ static NSString *const LogoPath = @"photo.mobile.l";
                  shopEntity.genre   = [shop valueForKeyPath:GenreNamePath];
                  shopEntity.logo    = [shop valueForKeyPath: LogoPath];
                  
+                 NSLog(@"shopEntityの中身%@",shopEntity.name);
                  [shopEntityList addObject:shopEntity];
              }
              

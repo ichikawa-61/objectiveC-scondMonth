@@ -8,16 +8,16 @@
 
 #import <UIKit/UIKit.h>
 
-@protocol RefreshViewDelegate
+@protocol RetryViewDelegate
 
 @optional
 -(void)retryAccessApi;
 
 @end
 
-@interface RefreshView : UIView
+@interface RetryView : UIView
 
 +(instancetype)refreshView;
-@property(nonatomic, weak) id<RefreshViewDelegate> delegate;
+@property(nonatomic, weak) id<RetryViewDelegate> delegate;
 
 @end

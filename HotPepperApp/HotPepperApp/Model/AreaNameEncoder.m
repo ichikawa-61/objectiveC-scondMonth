@@ -10,6 +10,7 @@
 
 @implementation AreaNameEncoder
 
+#pragma mark - private method
 -(NSString*)encodeAreaName:(NSString*)area{
 
     [area stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet alphanumericCharacterSet]];

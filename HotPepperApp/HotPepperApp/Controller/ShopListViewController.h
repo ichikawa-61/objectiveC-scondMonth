@@ -12,5 +12,6 @@
 @interface ShopListViewController : UIViewController<UITableViewDelegate,APIHotpepprtDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
+
 @end
 

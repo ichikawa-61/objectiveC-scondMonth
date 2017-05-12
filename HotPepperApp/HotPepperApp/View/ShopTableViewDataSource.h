@@ -7,9 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
+//View
 #import "ShopCell.h"
 #import "LoadNextCell.h"
-//#import <SDWebImage/UIImageView+WebCache.h>
+
 @interface ShopTableViewDataSource : NSObject<UITableViewDataSource>
 
 -(void)setUpTableView:(NSMutableArray<NSString*>*)shops CountOfLoad:(NSInteger)count;

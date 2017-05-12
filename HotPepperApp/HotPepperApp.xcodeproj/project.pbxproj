@@ -21,8 +21,8 @@
 		385EB45F1EAD96D80044F30E /* ShopTableViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 385EB45E1EAD96D80044F30E /* ShopTableViewDataSource.m */; };
 		385EB4681EAD990B0044F30E /* ShopCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 385EB4661EAD990B0044F30E /* ShopCell.m */; };
 		385EB4691EAD990B0044F30E /* ShopCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 385EB4671EAD990B0044F30E /* ShopCell.xib */; };
-		3891799F1EC3F528007612CD /* RefreshView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3891799E1EC3F528007612CD /* RefreshView.xib */; };
-		389179A21EC3F735007612CD /* RefreshView.m in Sources */ = {isa = PBXBuildFile; fileRef = 389179A11EC3F735007612CD /* RefreshView.m */; };
+		3891799F1EC3F528007612CD /* RetryView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3891799E1EC3F528007612CD /* RetryView.xib */; };
+		389179A21EC3F735007612CD /* RetryView.m in Sources */ = {isa = PBXBuildFile; fileRef = 389179A11EC3F735007612CD /* RetryView.m */; };
 		38EACD621EC013F800E8B230 /* LoadNextCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 38EACD601EC013F800E8B230 /* LoadNextCell.m */; };
 		38EACD631EC013F800E8B230 /* LoadNextCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 38EACD611EC013F800E8B230 /* LoadNextCell.xib */; };
 		8BD570AB590EEEE590713DAC /* libPods-HotPepperAppUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 34B21B39CED9D39C4067C996 /* libPods-HotPepperAppUITests.a */; };
@@ -75,9 +75,9 @@
 		385EB4651EAD990B0044F30E /* ShopCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ShopCell.h; path = View/ShopCell.h; sourceTree = "<group>"; };
 		385EB4661EAD990B0044F30E /* ShopCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ShopCell.m; path = View/ShopCell.m; sourceTree = "<group>"; };
 		385EB4671EAD990B0044F30E /* ShopCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ShopCell.xib; path = View/ShopCell.xib; sourceTree = "<group>"; };
-		3891799E1EC3F528007612CD /* RefreshView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = RefreshView.xib; path = View/RefreshView.xib; sourceTree = "<group>"; };
-		389179A01EC3F735007612CD /* RefreshView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RefreshView.h; path = View/RefreshView.h; sourceTree = "<group>"; };
-		389179A11EC3F735007612CD /* RefreshView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RefreshView.m; path = View/RefreshView.m; sourceTree = "<group>"; };
+		3891799E1EC3F528007612CD /* RetryView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = RetryView.xib; path = View/RetryView.xib; sourceTree = "<group>"; };
+		389179A01EC3F735007612CD /* RetryView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RetryView.h; path = View/RetryView.h; sourceTree = "<group>"; };
+		389179A11EC3F735007612CD /* RetryView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RetryView.m; path = View/RetryView.m; sourceTree = "<group>"; };
 		38EACD5F1EC013F800E8B230 /* LoadNextCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LoadNextCell.h; path = View/LoadNextCell.h; sourceTree = "<group>"; };
 		38EACD601EC013F800E8B230 /* LoadNextCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LoadNextCell.m; path = View/LoadNextCell.m; sourceTree = "<group>"; };
 		38EACD611EC013F800E8B230 /* LoadNextCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = LoadNextCell.xib; path = View/LoadNextCell.xib; sourceTree = "<group>"; };
@@ -236,9 +236,9 @@
 		385EB45C1EAD963D0044F30E /* View */ = {
 			isa = PBXGroup;
 			children = (
-				389179A01EC3F735007612CD /* RefreshView.h */,
-				389179A11EC3F735007612CD /* RefreshView.m */,
-				3891799E1EC3F528007612CD /* RefreshView.xib */,
+				389179A01EC3F735007612CD /* RetryView.h */,
+				389179A11EC3F735007612CD /* RetryView.m */,
+				3891799E1EC3F528007612CD /* RetryView.xib */,
 				385EB45D1EAD96D80044F30E /* ShopTableViewDataSource.h */,
 				385EB45E1EAD96D80044F30E /* ShopTableViewDataSource.m */,
 				385EB4651EAD990B0044F30E /* ShopCell.h */,
@@ -378,7 +378,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				385EB4481EAD85E70044F30E /* ShopList.storyboard in Resources */,
-				3891799F1EC3F528007612CD /* RefreshView.xib in Resources */,
+				3891799F1EC3F528007612CD /* RetryView.xib in Resources */,
 				38EACD631EC013F800E8B230 /* LoadNextCell.xib in Resources */,
 				385EB41C1EAD81CA0044F30E /* Assets.xcassets in Resources */,
 				385EB4691EAD990B0044F30E /* ShopCell.xib in Resources */,
@@ -550,7 +550,7 @@
 				385EB4681EAD990B0044F30E /* ShopCell.m in Sources */,
 				385EB4111EAD81CA0044F30E /* main.m in Sources */,
 				385EB45F1EAD96D80044F30E /* ShopTableViewDataSource.m in Sources */,
-				389179A21EC3F735007612CD /* RefreshView.m in Sources */,
+				389179A21EC3F735007612CD /* RetryView.m in Sources */,
 				3811452B1EB80A75009337B1 /* AreaNameEncoder.m in Sources */,
 				38EACD621EC013F800E8B230 /* LoadNextCell.m in Sources */,
 				385EB44F1EAD87740044F30E /* HotPepperApiManager.m in Sources */,
