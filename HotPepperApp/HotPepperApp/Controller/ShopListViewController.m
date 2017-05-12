@@ -10,16 +10,16 @@
 //View
 #import "ShopTableViewDataSource.h"
 #import "ShopCell.h"
-#import "RefreshView.h"
+#import "RetryView.h"
 
 
 NSInteger loadNextCount = 1;
-@interface ShopListViewController ()<RefreshViewDelegate>
+@interface ShopListViewController ()<RetryViewDelegate>
 
 @property (nonatomic,strong) ShopTableViewDataSource *dataSource;
 @property (nonatomic,strong) HotPepperApiManager *manager;
 @property (nonatomic) NSInteger scrollNumber;
-@property (nonatomic, strong) RefreshView *refreshView;
+@property (nonatomic, strong) RetryView *refreshView;
 @property (nonatomic) UIRefreshControl *refreshControl;
 @property (nonatomic, strong) UIActivityIndicatorView *indicator;
 
@@ -39,12 +39,6 @@ static NSString *const firstLoadNumber = @"1";
     self.manager = [[HotPepperApiManager alloc]init];
     self.manager.delegate = self;
     [self.manager getShopInformation:loadNextCount];
-    
-   
-    //[self.view addSubview:self.refreshView];
-    //[self.view bringSubviewToFront:self.refreshView];
-    //self.view = self.refreshView;
-    
     
     UINib *nib = [UINib nibWithNibName:@"ShopCell" bundle:nil];
     [self.tableView registerNib:nib forCellReuseIdentifier:@"Cell"];
@@ -77,19 +71,6 @@ static NSString *const firstLoadNumber = @"1";
 }
 
 
-//スクロールで最終行まで行ったら呼ばれる
-//- (void)showIndicatorOnTheBottom
-//{
-//    [self.indicator startAnimating];
-//    CGRect footerFrame = self.tableView.tableFooterView.frame;
-//    footerFrame.size.height += 10.0f;
-//    NSLog(@"下まで行ったよ");
-//    [self.indicator setFrame:footerFrame];
-//    [self.tableView setTableFooterView:self.indicator];
-//    
-//    }
-//
-
 - (void)endIndicator
 {
     [self.indicator stopAnimating];
@@ -97,7 +78,7 @@ static NSString *const firstLoadNumber = @"1";
     
 }
 
-#pragma mark - RefreshViewDelegate method
+#pragma mark - RetryViewDelegate method
 
 -(void)retryAccessApi{
 
@@ -105,7 +86,7 @@ static NSString *const firstLoadNumber = @"1";
 }
 
 
-#pragma mark - HotPepperApiManager delegate method
+#pragma mark - HotPepperApiManager delegate methods
 
 -(void)finishGettingInfo:(NSMutableArray *)shopList{
     
@@ -113,8 +94,9 @@ static NSString *const firstLoadNumber = @"1";
     [self.dataSource setUpTableView:shopList CountOfLoad:loadNextCount];
     
     self.scrollNumber = shopList.count;
-    [self.tableView reloadData];
-    
+    if(shopList.count < 11){
+        [self.tableView reloadData];
+    }
     //インジケーターは非表示にする
     [self endIndicator];
 }
@@ -123,7 +105,7 @@ static NSString *const firstLoadNumber = @"1";
     
     [self endIndicator];
     
-    self.refreshView = [RefreshView refreshView];
+    self.refreshView = [RetryView refreshView];
     self.refreshView.delegate = self;
     [self.view addSubview:self.refreshView];
     [self.view bringSubviewToFront:self.refreshView];
@@ -133,7 +115,7 @@ static NSString *const firstLoadNumber = @"1";
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if(indexPath.row== self.scrollNumber){
+    if(indexPath.row == self.scrollNumber*loadNextCount){
         return 60;
     
     }else{
@@ -143,7 +125,7 @@ static NSString *const firstLoadNumber = @"1";
 
 -(void)tableView:(UITableView*)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    if(indexPath.row == self.scrollNumber){
+    if(indexPath.row == self.scrollNumber*loadNextCount){
         
         loadNextCount++;
         [self.manager getShopInformation:loadNextCount];
@@ -152,81 +134,21 @@ static NSString *const firstLoadNumber = @"1";
         footerFrame.size.height += 10.0f;
 
         [self.indicator setFrame:footerFrame];
+        [self.indicator startAnimating];
         [self.tableView setTableFooterView:self.indicator];
-        //[self showIndicatorOnTheBottom];
         [self.tableView reloadData];
-        NSLog(@"リロードするよ");
     }
 }
 
--(void)tableView:(UITableView*)tableView willDisplayCell:(UITableViewCell *)cell
-forRowAtIndexPath:(NSIndexPath *)indexPath {
-    
-}
-
-- (IBAction)retryGettingInfo:(id)sender {
-    
-    NSLog(@"OK！");
-}
+# pragma mark - UIRefreshController method
 
 -(void)pullToRefresh{
     
-    NSLog(@"UIRefresh呼ばれた");
+    loadNextCount = 1;
     [self.refreshControl beginRefreshing];
     [self.manager getShopInformation:loadNextCount];
     [self.refreshControl endRefreshing];
 }
-
-
-
-
-
-#pragma mark - scrollView
-
-//スクロールするたびに呼ばれるメソッド
-//- (void)scrollViewDidScroll:(UIScrollView *)scrollView
-//{
-//
-//    BOOL isBouncing = NO;
-//    isBouncing = (self.tableView.contentOffset.y >= (self.tableView.contentSize.height - self.tableView.bounds.size.height)) &  self.tableView.dragging;
-//    if(isBouncing){
-//        
-//        //最後のせるまで行ったらインジゲーターを出す
-//       // [self startIndicator];
-//        [self showIndicatorOnTheBottom];
-//        //[self.manager getShopInformation:self.area NumberOfSearch:APICount];
-//        //[self startReloadData];
-//        //[self startIndicator];
-//        
-//        loadNextCount++;
-//        [self.manager getShopInformation:loadNextCount];
-//        [self showIndicatorOnTheBottom];
-//        [self.tableView reloadData];
-//
-//    }
-//}
-//
-
-//たぶんいらない
-//- (void)startReloadData{
-//   
-//    
-//    CGRect footerFrame = self.tableView.tableFooterView.frame;
-//    footerFrame.size.height += 10.0f;
-//    
-//    UIImageView *reloadImage = [[UIImageView alloc]init];
-//    reloadImage.image = [UIImage imageNamed:@"refresh"];
-//    [reloadImage setFrame:footerFrame];
-//    [self.tableView setTableFooterView:reloadImage];
-//    
-//    
-//}
-
-
-
-
-
-
 
 
 @end
